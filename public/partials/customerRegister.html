@@ -1,11 +1,12 @@
-<form class="card-panel">
+<div class="container">
+    <form class="card-panel" ng-submit="submit()">
         <div class="row">
             <div class="input-field center-align col s12 register-title">
                 Preencha as informações abaixo
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col m6 s12">
                 <i class="material-icons prefix">contacts</i>
                 <input 
                 ng-model="nome" 
@@ -22,12 +23,26 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-field  col s6">
+            <p>
+                <div class="col s6">
+                    <input checked ng-model="tipoCliente" value="0" name="groupTipoCliente" type="radio" id="pf" />
+                    <label for="pf">Pessoa Física</label>
+                </div>
+            </p>
+            <p>
+                <div class="col s6">
+                    <input ng-model="tipoCliente" value="1" name="groupTipoCliente" type="radio" id="pj" />
+                    <label for="pj">Pessoa Jurídica</label>
+                </div>
+            </p>
+        </div>
+        <div ng-if="tipoCliente == '0'" class="row">
+            <div class="input-field  col m6 s12">
                 <i class="material-icons prefix">person_pin</i>
                 <input 
                 required 
                 ng-model="documento" 
-                mask='999.999.999-99' 
+                mask='999.999.999-99'
                 id="cpf" 
                 type="text" 
                 class="validate"
@@ -36,88 +51,121 @@
                 <label for="cpf">CPF</label>
             </div>
         </div>
-        <div class="row">
-                <div class="input-field  col s6">
-                        <i class="material-icons prefix">phone</i>
-                        <input 
-                        required 
-                        ng-model="documento" 
-                        mask='(99)9999-9999' 
-                        id="cpf" 
-                        type="text" 
-                        class="validate"
-                        oninvalid="this.setCustomValidity('Campo cpf obrigatório')" 
-                        oninput="setCustomValidity('')">
-                        <label for="cpf">Telefone</label>
-                    </div>
-                <div class="input-field  col s6">
-                        <i class="material-icons prefix">phone_iphone</i>
-                        <input 
-                        required 
-                        ng-model="documento" 
-                        mask='(99)9?9999-9999' 
-                        id="cpf" 
-                        type="text" 
-                        class="validate"
-                        oninvalid="this.setCustomValidity('Campo cpf obrigatório')" 
-                        oninput="setCustomValidity('')">
-                        <label for="cpf">Celular</label>
-                    </div>
-            </div>
-        <!-- <div class="row">
-            <div class="input-field col s12">
-                <select 
-                required 
-                ng-model="perfil"
-                oninvalid="this.setCustomValidity('Campo Perfil obrigatório')" 
-                oninput="setCustomValidity('')">
-                        <option value="">Selecione</option>
-                        <option 
-                        ng-repeat="perfil in perfis" 
-                        value="{{perfil.id}}">{{perfil.description}}</option>
-                    </select>
-                <label>Perfil</label>
-            </div>
-        </div> -->
-        <div class="row">
-            <div class="input-field  col s6">
-                <i class="material-icons prefix">account_circle</i>
+        <div ng-if="tipoCliente == '1'" class="row">
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">person_pin</i>
                 <input 
                 required 
-                ng-model="login" 
-                id="user" 
+                ng-model="documento" 
+                mask='99.999.999/9999-99'
+                id="cnpj" 
                 type="text" 
                 class="validate"
-                oninvalid="this.setCustomValidity('Campo Login obrigatório')" 
+                oninvalid="this.setCustomValidity('Campo cnpj obrigatório')" 
                 oninput="setCustomValidity('')">
-                <label for="user">Login</label>
-            </div>
-            <div class="input-field  col s6">
-                <i class="material-icons prefix">vpn_key</i>
-                <input 
-                required 
-                ng-model="senha" 
-                id="password" 
-                type="password" 
-                class="validate"
-                oninvalid="this.setCustomValidity('Campo Senha obrigatório')" 
-                oninput="setCustomValidity('')">
-                <label for="password">Senha</label>
+                <label for="cnpj">CNPJ</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field  col s12">
-                <i class="material-icons prefix">email</i>
+            <div class="input-field  col m6 s12">
+                    <i class="material-icons prefix">phone</i>
+                    <input 
+                    ng-model="telefone" 
+                    mask='(99)9999-9999' 
+                    id="telefone" 
+                    type="text" 
+                    class="validate">
+                    <label for="telefone">Telefone</label>
+                </div>
+            <div class="input-field  col m6 s12">
+                    <i class="material-icons prefix">phone_iphone</i>
+                    <input 
+                    required 
+                    ng-model="celular" 
+                    mask='(99)9?9999-9999'
+                    id="celular" 
+                    type="text" 
+                    class="validate"
+                    oninvalid="this.setCustomValidity('Campo celular obrigatório')" 
+                    oninput="setCustomValidity('')">
+                    <label for="celular">Celular</label>
+                </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">location_on</i>
                 <input 
                 required 
-                ng-model="email" 
-                id="email" 
-                type="email" 
+                ng-model="cep" 
+                mask='99.999.999'
+                id="cep" 
+                type="text" 
                 class="validate"
-                oninvalid="this.setCustomValidity('Campo Email obrigatório')" 
+                oninvalid="this.setCustomValidity('Campo CEP obrigatório')" 
                 oninput="setCustomValidity('')">
-                <label for="email">Email</label>
+                <label for="cep">CEP</label>
             </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col m9 s12">
+                <i class="material-icons prefix">theaters</i>
+                <input 
+                required 
+                ng-model="logradouro" 
+                id="logradouro" 
+                type="text" 
+                class="validate"
+                oninvalid="this.setCustomValidity('Campo Logradouro obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="logradouro">Logradouro</label>
+            </div>
+            <div class="input-field  col m3 s12">
+                <i class="material-icons prefix">looks_two</i>
+                <input 
+                required 
+                ng-model="numero" 
+                id="numero" 
+                type="text" 
+                class="validate"
+                oninvalid="this.setCustomValidity('Campo Número obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="numero">Número</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">subject</i>
+                <input 
+                ng-model="complemento" 
+                id="complemento" 
+                type="text">
+                <label for="complemento">Complemento</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">location_city</i>
+                <input 
+                required
+                ng-model="cidade" 
+                id="cidade" 
+                type="text"
+                oninvalid="this.setCustomValidity('Campo Cidade obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="cidade">Cidade</label>
+            </div>
+            <!--TODO: Estado será um select-->
+            <div class="input-field  col m6 s12">
+                    <i class="material-icons prefix"></i>
+                    <input 
+                    required
+                    ng-model="estado" 
+                    id="estado" 
+                    type="text"
+                    oninvalid="this.setCustomValidity('Campo Estado obrigatório')" 
+                    oninput="setCustomValidity('')">
+                    <label for="estado">Estado</label>
+                </div>
         </div>
         <div class="row">
             <div class="input-field  col s12">
@@ -127,9 +175,15 @@
             </div>
         </div>
         <div class="row">
+            <div class=" col s6">
+                <input ng-model="contribICMS" type="checkbox" id="contICMS">
+                <label for="contICMS">Contribuinte de ICMS</label>
+            </div>
+        </div>
+        <div class="row">
             <div class="input-field  col s12">
-                <button class="waves-effect waves-light btn right "><i class="large material-icons right">done</i>register</button>
+                <button class="waves-effect waves-light btn right "><i class="large material-icons right">done</i>Cadastrar</button>
             </div>
         </div>
     </form>
-    
+</div>

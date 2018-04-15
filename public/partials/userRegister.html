@@ -1,118 +1,120 @@
-<form class="card-panel">
-    <div class="row">
-        <div class="input-field center-align col s12 register-title">
-            Preencha as informações abaixo
+<div class="container">
+    <form class="card-panel">
+        <div class="row">
+            <div class="input-field center-align col s12 register-title">
+                Preencha as informações abaixo
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-            <i class="material-icons prefix">contacts</i>
-            <input 
-            ng-model="nome" 
-            id="name"
-            type="text" 
-            class="validate"
-            required oninvalid="this.setCustomValidity('Campo nome obrigatório')" 
-            oninput="setCustomValidity('')">
-            <label for="name">Nome</label>
+        <div class="row">
+            <div class="input-field col m6 s12">
+                <i class="material-icons prefix">contacts</i>
+                <input 
+                ng-model="nome" 
+                id="name"
+                type="text" 
+                class="validate"
+                required oninvalid="this.setCustomValidity('Campo nome obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="name">Nome</label>
+            </div>
+            <div class=" col s6">
+                <input ng-model="ativo" type="checkbox" id="remember-me">
+                <label for="remember-me">Ativo</label>
+            </div>
         </div>
-        <div class=" col s6">
-            <input ng-model="ativo" type="checkbox" id="remember-me">
-            <label for="remember-me">Ativo</label>
+        <div class="row">
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">person_pin</i>
+                <input 
+                required 
+                ng-model="cpf" 
+                mask='999.999.999-99' 
+                id="cpf" 
+                type="text" 
+                class="validate"
+                oninvalid="this.setCustomValidity('Campo cpf obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="cpf">CPF</label>
+            </div>
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">person_pin</i>
+                <input 
+                required 
+                ng-model="rg" 
+                id="rg" 
+                type="text" 
+                class="validate"
+                oninvalid="this.setCustomValidity('Campo RG obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="rg">RG</label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="input-field  col s6">
-            <i class="material-icons prefix">person_pin</i>
-            <input 
-            required 
-            ng-model="cpf" 
-            mask='999.999.999-99' 
-            id="cpf" 
-            type="text" 
-            class="validate"
-            oninvalid="this.setCustomValidity('Campo cpf obrigatório')" 
-            oninput="setCustomValidity('')">
-            <label for="cpf">CPF</label>
+        <!-- <div class="row">
+            <div class="input-field col s12">
+                <select 
+                required 
+                ng-model="perfil"
+                oninvalid="this.setCustomValidity('Campo Perfil obrigatório')" 
+                oninput="setCustomValidity('')">
+                        <option value="">Selecione</option>
+                        <option 
+                        ng-repeat="perfil in perfis" 
+                        value="{{perfil.id}}">{{perfil.description}}</option>
+                    </select>
+                <label>Perfil</label>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input 
+                required 
+                ng-model="login" 
+                id="user" 
+                type="text" 
+                class="validate"
+                oninvalid="this.setCustomValidity('Campo Login obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="user">Login</label>
+            </div>
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">vpn_key</i>
+                <input 
+                required 
+                ng-model="senha" 
+                id="password" 
+                type="password" 
+                class="validate"
+                oninvalid="this.setCustomValidity('Campo Senha obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="password">Senha</label>
+            </div>
         </div>
-        <div class="input-field  col s6">
-            <i class="material-icons prefix">person_pin</i>
-            <input 
-            required 
-            ng-model="rg" 
-            id="rg" 
-            type="text" 
-            class="validate"
-            oninvalid="this.setCustomValidity('Campo RG obrigatório')" 
-            oninput="setCustomValidity('')">
-            <label for="rg">RG</label>
+        <div class="row">
+            <div class="input-field  col s12">
+                <i class="material-icons prefix">email</i>
+                <input 
+                required 
+                ng-model="email" 
+                id="email" 
+                type="email" 
+                class="validate"
+                oninvalid="this.setCustomValidity('Campo Email obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="email">Email</label>
+            </div>
         </div>
-    </div>
-    <!-- <div class="row">
-        <div class="input-field col s12">
-            <select 
-            required 
-            ng-model="perfil"
-            oninvalid="this.setCustomValidity('Campo Perfil obrigatório')" 
-            oninput="setCustomValidity('')">
-                    <option value="">Selecione</option>
-                    <option 
-                    ng-repeat="perfil in perfis" 
-                    value="{{perfil.id}}">{{perfil.description}}</option>
-                </select>
-            <label>Perfil</label>
+        <div class="row">
+            <div class="input-field  col s12">
+                <i class="material-icons prefix">comment</i>
+                <textarea ng-model="observacao" id="note" cols="30" rows="10" class="validate"></textarea>
+                <label for="note">Observação</label>
+            </div>
         </div>
-    </div> -->
-    <div class="row">
-        <div class="input-field  col s6">
-            <i class="material-icons prefix">account_circle</i>
-            <input 
-            required 
-            ng-model="login" 
-            id="user" 
-            type="text" 
-            class="validate"
-            oninvalid="this.setCustomValidity('Campo Login obrigatório')" 
-            oninput="setCustomValidity('')">
-            <label for="user">Login</label>
+        <div class="row">
+            <div class="input-field  col s12">
+                <button class="waves-effect waves-light btn right "><i class="large material-icons right">done</i>Cadastrar</button>
+            </div>
         </div>
-        <div class="input-field  col s6">
-            <i class="material-icons prefix">vpn_key</i>
-            <input 
-            required 
-            ng-model="senha" 
-            id="password" 
-            type="password" 
-            class="validate"
-            oninvalid="this.setCustomValidity('Campo Senha obrigatório')" 
-            oninput="setCustomValidity('')">
-            <label for="password">Senha</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field  col s12">
-            <i class="material-icons prefix">email</i>
-            <input 
-            required 
-            ng-model="email" 
-            id="email" 
-            type="email" 
-            class="validate"
-            oninvalid="this.setCustomValidity('Campo Email obrigatório')" 
-            oninput="setCustomValidity('')">
-            <label for="email">Email</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field  col s12">
-            <i class="material-icons prefix">comment</i>
-            <textarea ng-model="observacao" id="note" cols="30" rows="10" class="validate"></textarea>
-            <label for="note">Observação</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field  col s12">
-            <button class="waves-effect waves-light btn right "><i class="large material-icons right">done</i>register</button>
-        </div>
-    </div>
-</form>
+    </form>
+</div>
