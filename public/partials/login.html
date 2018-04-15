@@ -1,40 +1,56 @@
 <div id="login-page" class="row">
   <div class="col s12 z-depth-4 card-panel">
-    <form class="login-form">
-      <div class="row">
-        <div class="input-field col s12 center">
-          <img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />
+    <form class="login-form" ng-submit="submit()">
+      <div class="login-title">
+        <div class="row">
+          <div class="input-field col s12 center">
+            <!-- <img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" /> -->
+            <div class="wrap">
+              <span class="letter letter-1">T</span>
+              <span class="letter letter-2">R</span>
+              <span class="letter letter-3">A</span>
+              <span class="letter letter-4">N</span>
+              <span class="letter letter-5">S</span>
+              <span class="letter letter-bold letter-6">C</span>
+              <span class="letter letter-bold letter-7">O</span>
+              <span class="letter letter-bold letter-8">T</span>
+              <span class="letter letter-bold letter-9">A</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row margin">
         <div class="input-field col s12">
           <i class="material-icons prefix">person_outline</i>
-          <input id="username" type="text">
-          <label for="username" class="center-align">Usuario</label>
+          <input ng-model="usuario" ngClass="invalid : wrongUserOrPassword" id="username" type="text" 
+          class="validate" required oninvalid="this.setCustomValidity('Usuário obrigatório')" oninput="setCustomValidity('')">
+          <label id="userLabel" for="username" class="center-align" data-error="Usuário inválido">Usuario</label>
         </div>
       </div>
       <div class="row margin">
         <div class="input-field col s12">
           <i class="material-icons prefix">lock_outline</i>
-          <input id="password" type="password">
-          <label for="password">Senha</label>
+          <input ng-model="senha" ngClass="invalid : wrongUserOrPassword" 
+          class="validate" id="password" type="password" required oninvalid="this.setCustomValidity('Senha obrigatória')" oninput="setCustomValidity('')">
+          <label id="passLabel" for="password" data-error="Senha inválida">Senha</label>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col s12 m12 l12 center-align remember-me">
           <input type="checkbox" id="remember-me">
           <label for="remember-me">Permanecer conectado</label>
         </div>
-      </div>
+      </div> -->
       <div class="row">
         <div class="input-field col s12">
-          <button href="index.html" data-loading-text="<div class='progress'> <div class='indeterminate'></div> </div>" class="btn btn-load waves-effect waves-light col s12">Entrar</button>
+          <button href="index.html" data-loading-text="<div class='progress teal lighten-3'> <div class='indeterminate'></div> </div>"
+            class="btn btn-load waves-effect waves-light col s12">Entrar</button>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s6 m6 l6">
           <p class="margin medium-small">
-            <a href="page-register.html">Cadastrar-se</a>
+            <a href="/register">Cadastrar-se</a>
           </p>
         </div>
         <div class="input-field col s6 m6 l6">

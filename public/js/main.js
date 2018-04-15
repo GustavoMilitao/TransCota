@@ -1,4 +1,4 @@
-angular.module('transcota', ['ngRoute','transcotaServicos', 'transcotaDiretivas'])
+angular.module('transcota', ['ngRoute','transcotaServicos', 'transcotaDiretivas', 'ngMask'])
 	.config(function($routeProvider, $locationProvider) {
 
 		$locationProvider.html5Mode(true);
@@ -11,6 +11,16 @@ angular.module('transcota', ['ngRoute','transcotaServicos', 'transcotaDiretivas'
 		$routeProvider.when('/login', {
 			templateUrl: 'partials/login.html',
 			controller: 'loginController'
+		});
+
+		$routeProvider.when('/register', {
+			templateUrl: 'partials/userRegister.html',
+			controller: 'userRegisterController'
+		});
+
+		$routeProvider.when('/customerRegister', {
+			templateUrl: 'partials/customerRegister.html',
+			controller: 'customerRegisterController'
 		});
 
 		$routeProvider.otherwise({redirectTo: '/'});

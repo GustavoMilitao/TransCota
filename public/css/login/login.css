@@ -2337,3 +2337,142 @@ tr.group:hover {
   margin-top: 20px;
 }
 
+
+.login-title {
+  margin: 20px;
+}
+
+
+.wrap {
+  font-family: "Sofia";
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.letter {
+  color: lightblue;
+  font-size: 2em;
+  font-weight: lighter;
+  margin-right: 5px;
+}
+
+.letter.letter-bold {
+  color: darkcyan;
+}
+
+.letter-1 {
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+.letter-2 {
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+
+.letter-3 {
+  -webkit-animation-delay: .6s;
+          animation-delay: .6s;
+}
+
+.letter-4 {
+  -webkit-animation-delay: .8s;
+          animation-delay: .8s;
+}
+
+.letter-5 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.letter-6 {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.letter-7 {
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.letter-8 {
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
+}
+
+.letter-9 {
+  -webkit-animation-delay: 1.8s;
+          animation-delay: 1.8s;
+}
+
+.animated, .letter {
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 5.6s;
+          animation-duration: 5.6s;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  75% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  75% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+.fadeIn, .letter {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+}
+
+.fadeIn, .letter {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}

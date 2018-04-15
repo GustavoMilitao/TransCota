@@ -15,3 +15,7 @@ body {
 .material-icons {
     line-height: unset;
 }
+
+.btn-load.disabled {
+    background-color: transparent !important;
+}
