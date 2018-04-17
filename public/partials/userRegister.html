@@ -1,5 +1,5 @@
 <div class="container">
-    <form class="card-panel">
+    <form class="card-panel" ng-submit="submit()">
         <div class="row">
             <div class="input-field center-align col s12 register-title">
                 Preencha as informações abaixo
@@ -9,7 +9,7 @@
             <div class="input-field col m6 s12">
                 <i class="material-icons prefix">contacts</i>
                 <input 
-                ng-model="nome" 
+                ng-model="userModel.name" 
                 id="name"
                 type="text" 
                 class="validate"
@@ -18,7 +18,7 @@
                 <label for="name">Nome</label>
             </div>
             <div class=" col s6">
-                <input ng-model="ativo" type="checkbox" id="remember-me">
+                <input ng-model="userModel.active" type="checkbox" id="remember-me">
                 <label for="remember-me">Ativo</label>
             </div>
         </div>
@@ -27,20 +27,21 @@
                 <i class="material-icons prefix">person_pin</i>
                 <input 
                 required 
-                ng-model="cpf" 
+                ng-model="userModel.cpf" 
                 mask='999.999.999-99' 
                 id="cpf" 
                 type="text" 
                 class="validate"
                 oninvalid="this.setCustomValidity('Campo cpf obrigatório')" 
-                oninput="setCustomValidity('')">
+                oninput="setCustomValidity('')"
+                clean="true">
                 <label for="cpf">CPF</label>
             </div>
             <div class="input-field  col m6 s12">
                 <i class="material-icons prefix">person_pin</i>
                 <input 
                 required 
-                ng-model="rg" 
+                ng-model="userModel.rg" 
                 id="rg" 
                 type="text" 
                 class="validate"
@@ -53,7 +54,7 @@
             <div class="input-field col s12">
                 <select 
                 required 
-                ng-model="perfil"
+                ng-model="userModel.idProfile"
                 oninvalid="this.setCustomValidity('Campo Perfil obrigatório')" 
                 oninput="setCustomValidity('')">
                         <option value="">Selecione</option>
@@ -69,7 +70,7 @@
                 <i class="material-icons prefix">account_circle</i>
                 <input 
                 required 
-                ng-model="login" 
+                ng-model="userModel.login" 
                 id="user" 
                 type="text" 
                 class="validate"
@@ -81,7 +82,7 @@
                 <i class="material-icons prefix">vpn_key</i>
                 <input 
                 required 
-                ng-model="senha" 
+                ng-model="userModel.password" 
                 id="password" 
                 type="password" 
                 class="validate"
@@ -95,7 +96,7 @@
                 <i class="material-icons prefix">email</i>
                 <input 
                 required 
-                ng-model="email" 
+                ng-model="userModel.email" 
                 id="email" 
                 type="email" 
                 class="validate"
@@ -107,7 +108,7 @@
         <div class="row">
             <div class="input-field  col s12">
                 <i class="material-icons prefix">comment</i>
-                <textarea ng-model="observacao" id="note" cols="30" rows="10" class="validate"></textarea>
+                <textarea ng-model="userModel.observacao" id="note" cols="30" rows="10" class="validate"></textarea>
                 <label for="note">Observação</label>
             </div>
         </div>

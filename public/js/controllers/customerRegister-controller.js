@@ -1,27 +1,36 @@
 angular.module('transcota')
 	.controller('customerRegisterController',
 
-	function ($scope, user) {
-		$scope.nome = "";
-		$scope.ativo = false;
-		$scope.documento = "";
-		$scope.rg = "";
-		$scope.perfil = "";
-		$scope.login = "";
-		$scope.senha = "";
-		$scope.email = "";
-		$scope.observacao = "";
-		$scope.tipoCliente = "0";
+		function ($scope, customer) {
+			$scope.customerModel = {
+				name : "",
+				document : "",
+				phone1 : "",
+				phone2 : "",
+				address : "",
+				number : "",
+				complement : "",
+				zipCode : "",
+				city : "",
+				state : "",
+				active : false,
+				taxpayer : false,
+				email : "",
+				observation : ""
+			}
 
-		$scope.submit = function () {
-			$('.btn-load').button('loading');
-			user.register($scope.usuario, $scope.senha)
-				.then(function (data) {
-					if (data) {
+			$scope.tipoCliente = "0";
+	
 
-					} else {
+			$scope.submit = function () {
+				$('.btn-load').button('loading');
+				customer.register($scope.customerModel)
+					.then(function (data) {
+						if (data) {
 
-					}
-				});
-		}
-	});
+						} else {
+
+						}
+					});
+			}
+		});

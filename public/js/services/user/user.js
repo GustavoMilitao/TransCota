@@ -20,5 +20,13 @@ angular.module('transcotaServicos')
             });
         }
 
+        service.register = function(user){
+            return $http({
+                url: "http://142.44.246.7:8080/CotacaoWebApp/user/",
+                method: 'POST',
+                data: user
+            });
+        }
+
         return service;
     });
