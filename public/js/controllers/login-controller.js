@@ -1,7 +1,7 @@
 angular.module('transcota')
 	.controller('loginController',
 
-		function ($scope, user) {
+		function ($scope, user, $location) {
 			$scope.usuario = "";
 			$scope.senha = "";
 			$scope.wrongUserOrPassword = false;
@@ -11,13 +11,16 @@ angular.module('transcota')
 				user.login($scope.usuario, $scope.senha)
 				.then(function(data){
 					$('.btn-load').button('reset');
-					if(data){
+					if(data.data){
+						$scope.wrongUserOrPassword = true;
+						$location.path('/home');
+					}else {
 						$scope.wrongUserOrPassword = false;
 						$('#passLabel').prop("aria-invalid", "true");
 						$('#userLabel').prop("aria-invalid", "true");
-					}else {
-						$scope.wrongUserOrPassword = true;
 					}
+				}).catch(function(data){
+					M.toast('Um erro ocorreu ao logar', 3000, 'red rounded');
 				});
 			}
 		});

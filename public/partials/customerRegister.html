@@ -1,4 +1,3 @@
-<div class="container">
     <form class="card-panel" ng-submit="submit()">
         <div class="row">
             <div class="input-field center-align col s12 register-title">
@@ -8,183 +7,117 @@
         <div class="row">
             <div class="input-field col m6 s12">
                 <i class="material-icons prefix">contacts</i>
-                <input 
-                ng-model="customerModel.name" 
-                id="name"
-                type="text" 
-                class="validate"
-                required oninvalid="this.setCustomValidity('Campo nome obrigatório')" 
-                oninput="setCustomValidity('')">
+                <input ng-model="customerModel.name" id="name" type="text" class="validate" required oninvalid="this.setCustomValidity('Campo nome obrigatório')"
+                    oninput="setCustomValidity('')">
                 <label for="name">Nome</label>
             </div>
-            <div class=" col s6">
-                <input ng-model="customerModel.active" type="checkbox" id="remember-me">
-                <label for="remember-me">Ativo</label>
+            <div class="input-field col s6">
+                <p>
+                    <label>
+                        <input ng-model="customerModel.active" type="checkbox" id="remember-me">
+                        <span for="remember-me">Ativo</span>
+                    </label>
+                </p>
             </div>
         </div>
         <div class="row">
+            <div class="input-field col s6">
+                <p>
+                    <label>
+                        <input checked ng-model="tipoCliente" value="0" name="groupTipoCliente" type="radio" id="pf" />
+                        <span for="pf">Pessoa Física</label>
+                    </label>
+                </p>
+            </div>
             <p>
-                <div class="col s6">
-                    <input checked ng-model="tipoCliente" value="0" name="groupTipoCliente" type="radio" id="pf" />
-                    <label for="pf">Pessoa Física</label>
-                </div>
-            </p>
-            <p>
-                <div class="col s6">
-                    <input ng-model="tipoCliente" value="1" name="groupTipoCliente" type="radio" id="pj" />
-                    <label for="pj">Pessoa Jurídica</label>
+                <div class="input-field col s6">
+                    <label>
+                        <input ng-model="tipoCliente" value="1" name="groupTipoCliente" type="radio" id="pj" />
+                        <span for="pj">Pessoa Jurídica</span>
+                    </label>
                 </div>
             </p>
         </div>
         <div ng-if="tipoCliente == '0'" class="row">
             <div class="input-field  col m6 s12">
                 <i class="material-icons prefix">person_pin</i>
-                <input 
-                required 
-                ng-model="customerModel.document" 
-                mask='999.999.999-99'
-                id="cpf" 
-                type="text" 
-                class="validate"
-                clean="true"
-                oninvalid="this.setCustomValidity('Campo cpf obrigatório')" 
-                oninput="setCustomValidity('')">
+                <input required ng-model="customerModel.document" mask='999.999.999-99' id="cpf" type="text" class="validate" clean="true"
+                    oninvalid="this.setCustomValidity('Campo cpf obrigatório')" oninput="setCustomValidity('')">
                 <label for="cpf">CPF</label>
             </div>
         </div>
         <div ng-if="tipoCliente == '1'" class="row">
             <div class="input-field  col m6 s12">
                 <i class="material-icons prefix">person_pin</i>
-                <input 
-                required 
-                ng-model="documento" 
-                mask='99.999.999/9999-99'
-                id="cnpj" 
-                type="text" 
-                class="validate"
-                clean="true"
-                oninvalid="this.setCustomValidity('Campo cnpj obrigatório')" 
-                oninput="setCustomValidity('')">
+                <input required ng-model="documento" mask='99.999.999/9999-99' id="cnpj" type="text" class="validate" clean="true" oninvalid="this.setCustomValidity('Campo cnpj obrigatório')"
+                    oninput="setCustomValidity('')">
                 <label for="cnpj">CNPJ</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field  col m6 s12">
-                    <i class="material-icons prefix">phone</i>
-                    <input 
-                    ng-model="customerModel.phone1" 
-                    mask='(99)9999-9999' 
-                    id="telefone" 
-                    type="text" 
-                    clean="true"
-                    class="validate">
-                    <label for="telefone">Telefone</label>
-                </div>
+                <i class="material-icons prefix">phone</i>
+                <input ng-model="customerModel.phone1" mask='(99)9999-9999' id="telefone" type="text" clean="true" class="validate">
+                <label for="telefone">Telefone</label>
+            </div>
             <div class="input-field  col m6 s12">
-                    <i class="material-icons prefix">phone_iphone</i>
-                    <input 
-                    required 
-                    ng-model="customerModel.phone2" 
-                    mask='(99)9?9999-9999'
-                    id="celular" 
-                    type="text" 
-                    clean="true"
-                    class="validate"
-                    oninvalid="this.setCustomValidity('Campo celular obrigatório')" 
-                    oninput="setCustomValidity('')">
-                    <label for="celular">Celular</label>
-                </div>
+                <i class="material-icons prefix">phone_iphone</i>
+                <input required ng-model="customerModel.phone2" mask='(99)9?9999-9999' id="celular" type="text" clean="true" class="validate"
+                    oninvalid="this.setCustomValidity('Campo celular obrigatório')" oninput="setCustomValidity('')">
+                <label for="celular">Celular</label>
+            </div>
         </div>
         <div class="row">
             <div class="input-field  col s12">
                 <i class="material-icons prefix">email</i>
-                <input 
-                required 
-                ng-model="customerModel.email" 
-                id="email" 
-                type="email" 
-                class="validate"
-                oninvalid="this.setCustomValidity('Campo Email obrigatório')" 
-                oninput="setCustomValidity('')">
+                <input required ng-model="customerModel.email" id="email" type="email" class="validate" oninvalid="this.setCustomValidity('Campo Email obrigatório')"
+                    oninput="setCustomValidity('')">
                 <label for="email">Email</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field  col m6 s12">
                 <i class="material-icons prefix">location_on</i>
-                <input 
-                required 
-                ng-model="customerModel.zipCode" 
-                mask='99.999.999'
-                id="cep" 
-                type="text" 
-                clean="true"
-                class="validate"
-                oninvalid="this.setCustomValidity('Campo CEP obrigatório')" 
-                oninput="setCustomValidity('')">
+                <input required ng-model="customerModel.zipCode" mask='99.999.999' id="cep" type="text" clean="true" class="validate" oninvalid="this.setCustomValidity('Campo CEP obrigatório')"
+                    oninput="setCustomValidity('')">
                 <label for="cep">CEP</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field  col m9 s12">
                 <i class="material-icons prefix">theaters</i>
-                <input 
-                required 
-                ng-model="customerModel.address" 
-                id="logradouro" 
-                type="text" 
-                class="validate"
-                oninvalid="this.setCustomValidity('Campo Logradouro obrigatório')" 
-                oninput="setCustomValidity('')">
+                <input required ng-model="customerModel.address" id="logradouro" type="text" class="validate" oninvalid="this.setCustomValidity('Campo Logradouro obrigatório')"
+                    oninput="setCustomValidity('')">
                 <label for="logradouro">Logradouro</label>
             </div>
             <div class="input-field  col m3 s12">
                 <i class="material-icons prefix">looks_two</i>
-                <input 
-                required 
-                ng-model="customerModel.number" 
-                id="numero" 
-                type="text" 
-                class="validate"
-                oninvalid="this.setCustomValidity('Campo Número obrigatório')" 
-                oninput="setCustomValidity('')">
+                <input required ng-model="customerModel.number" id="numero" type="text" class="validate" oninvalid="this.setCustomValidity('Campo Número obrigatório')"
+                    oninput="setCustomValidity('')">
                 <label for="numero">Número</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field  col m6 s12">
                 <i class="material-icons prefix">subject</i>
-                <input 
-                ng-model="customerModel.complement" 
-                id="complemento" 
-                type="text">
+                <input ng-model="customerModel.complement" id="complemento" type="text">
                 <label for="complemento">Complemento</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field  col m6 s12">
                 <i class="material-icons prefix">location_city</i>
-                <input 
-                required
-                ng-model="customerModel.city" 
-                id="cidade" 
-                type="text"
-                oninvalid="this.setCustomValidity('Campo Cidade obrigatório')" 
-                oninput="setCustomValidity('')">
+                <input required ng-model="customerModel.city" id="cidade" type="text" oninvalid="this.setCustomValidity('Campo Cidade obrigatório')"
+                    oninput="setCustomValidity('')">
                 <label for="cidade">Cidade</label>
             </div>
             <!--TODO: Estado será um select-->
             <div class="input-field  col m6 s12">
-                    <i class="material-icons prefix"></i>
-                    <input 
-                    required
-                    ng-model="customerModel.state" 
-                    id="estado" 
-                    type="text"
-                    oninvalid="this.setCustomValidity('Campo Estado obrigatório')" 
+                <i class="material-icons prefix"></i>
+                <input required ng-model="customerModel.state" id="estado" type="text" oninvalid="this.setCustomValidity('Campo Estado obrigatório')"
                     oninput="setCustomValidity('')">
-                    <label for="estado">Estado</label>
-                </div>
+                <label for="estado">Estado</label>
+            </div>
         </div>
         <div class="row">
             <div class="input-field  col s12">
@@ -194,15 +127,19 @@
             </div>
         </div>
         <div class="row">
-            <div class=" col s6">
-                <input ng-model="customerModel.taxpayer" type="checkbox" id="contICMS">
-                <label for="contICMS">Contribuinte de ICMS</label>
+            <div class="input-field col s6">
+                <p>
+                    <label>
+                        <input ng-model="customerModel.taxpayer" type="checkbox" id="contICMS">
+                        <span for="contICMS">Contribuinte de ICMS</span>
+                    </label>
+                </p>
             </div>
         </div>
         <div class="row">
-            <div class="input-field  col s12">
-                <button class="waves-effect waves-light btn right "><i class="large material-icons right">done</i>Cadastrar</button>
+            <div class="input-field col s12">
+                <button class="waves-effect waves-light btn right ">
+                    <i class="large material-icons right">done</i>Cadastrar</button>
             </div>
         </div>
     </form>
-</div>

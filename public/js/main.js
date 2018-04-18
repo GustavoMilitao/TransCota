@@ -23,6 +23,11 @@ angular.module('transcota', ['ngRoute','transcotaServicos', 'transcotaDiretivas'
 			controller: 'customerRegisterController'
 		});
 
+		$routeProvider.when('/home', {
+			templateUrl: 'partials/home.html',
+			controller: 'homeController'
+		});
+
 		$routeProvider.otherwise({redirectTo: '/'});
 
 	});

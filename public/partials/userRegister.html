@@ -17,9 +17,13 @@
                 oninput="setCustomValidity('')">
                 <label for="name">Nome</label>
             </div>
-            <div class=" col s6">
-                <input ng-model="userModel.active" type="checkbox" id="remember-me">
-                <label for="remember-me">Ativo</label>
+            <div class="input-field col s6">
+                <p>
+                    <label>
+                        <input ng-model="userModel.active" type="checkbox" id="remember-me">
+                        <span for="remember-me">Ativo</span>
+                    </label>
+                </p>
             </div>
         </div>
         <div class="row">
