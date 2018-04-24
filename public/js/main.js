@@ -1,16 +1,30 @@
-angular.module('transcota', ['ngRoute','transcotaServicos', 'transcotaDiretivas', 'ngMask'])
+angular.module('transcota', ['ngCookies','ngRoute','transcotaServicos', 'transcotaDiretivas', 'ngMask'])
 	.config(function($routeProvider, $locationProvider) {
 
 		$locationProvider.html5Mode(true);
 
 		$routeProvider.when('/', {
 			templateUrl: 'partials/login.html',
-			controller: 'loginController'
+			controller: 'loginController',
+			resolve:{
+				'check':function($location, $cookies){   
+					if($cookies.get('idUser')){ 
+						$location.path('/home');
+					}
+				}
+			}
 		});
 
 		$routeProvider.when('/login', {
 			templateUrl: 'partials/login.html',
-			controller: 'loginController'
+			controller: 'loginController',
+			resolve:{
+				'check':function($location, $cookies){   
+					if($cookies.get('idUser')){ 
+						$location.path('/home');
+					}
+				}
+			}
 		});
 
 		$routeProvider.when('/register', {
@@ -20,12 +34,28 @@ angular.module('transcota', ['ngRoute','transcotaServicos', 'transcotaDiretivas'
 
 		$routeProvider.when('/customerRegister', {
 			templateUrl: 'partials/customerRegister.html',
-			controller: 'customerRegisterController'
+			controller: 'customerRegisterController',
+			resolve:{
+				'check':function($location,$cookies){   
+					if(!$cookies.get('idUser')){ 
+						$location.path('/');
+					}
+				}
+			}
 		});
 
 		$routeProvider.when('/home', {
 			templateUrl: 'partials/home.html',
-			controller: 'homeController'
+			controller: 'homeController',
+			resolve:{
+				'check':function($location,$cookies, user){   
+					if(!$cookies.get('idUser')){ 
+						$location.path('/');
+					}else {
+						return user.getUser($cookies.get('idUser'));
+					}
+				}
+			}
 		});
 
 		$routeProvider.otherwise({redirectTo: '/'});

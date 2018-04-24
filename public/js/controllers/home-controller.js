@@ -1,5 +1,10 @@
 angular.module('transcota')
 	.controller('homeController',
 
-		function () {
+		function ($scope, check, $cookies, $location) {
+			$scope.user = check.data;
+			$scope.logout = function(){
+				$cookies.remove('idUser');
+				$location.path('/');
+			}
 		});

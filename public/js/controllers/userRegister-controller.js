@@ -41,11 +41,11 @@ angular.module('transcota')
 								}
 							});
 						} else {
-							M.toast(data.data.message, 3000, 'red rounded')
+							M.toast({ html : data.data.msg, displayLength : 3000, classes : 'red rounded'})
 						}
 					})
 					.catch(function (data) {
-						M.toast('Um erro ocorreu ao cadastrar um usuário', 3000, 'red rounded');
+						M.toast({ html : 'Um erro ocorreu ao cadastrar um usuário', displayLength : 3000, classes : 'red rounded'});
 					});;
 			}
 		});

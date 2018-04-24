@@ -1,0 +1,13 @@
+html,
+body {
+    height: 100%;
+}
+html {
+    display: initial;
+    margin: initial;
+}
+body {
+    display: initial;
+    vertical-align: initial;
+    background-color:initial !important;
+}
