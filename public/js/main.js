@@ -1,4 +1,4 @@
-angular.module('transcota', ['ngCookies','ngRoute','transcotaServicos', 'transcotaDiretivas', 'ngMask'])
+angular.module('transcota', ['ngSanitize', 'ngCookies','ngRoute','transcotaServicos', 'transcotaDiretivas', 'ngMask'])
 	.config(function($routeProvider, $locationProvider) {
 
 		$locationProvider.html5Mode(true);
