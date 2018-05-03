@@ -1,5 +1,5 @@
 angular.module('transcotaDiretivas')
-    .directive('customers', function (customer) {
+    .directive('customers', function (customer, $http) {
 
         var ddo = {};
 
@@ -9,15 +9,30 @@ angular.module('transcotaDiretivas')
 
         ddo.scope = {
             customers : "@",
+            customerToExclude : "@",
+            searchText : "@"
         };
 
         ddo.link = function(scope, elem, attrs){
             scope.clearScreen = function () {
-				scope.customers = [];
+                scope.customers = [];
+                scope.customerToExclude = {};
+                scope.searchText = "";
 			}
 			customer.get().then(function(data){
 				scope.customers = data.data;
-			});
+            });
+            scope.desejaExcluir = function(customer){
+                scope.customerToExclude = customer;
+                $('#modal-exclusao').modal('open');
+            }
+
+            scope.excluirSelecionado = function(){
+                if(scope.customerToExclude){
+
+                }
+            }
+
             scope.clearScreen();
         }
 

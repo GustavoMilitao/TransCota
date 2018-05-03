@@ -1,14 +1,47 @@
+<nav>
+    <div class="nav-wrapper">
+        <form>
+            <div class="input-field">
+                <input ng-model="searchText" id="search" type="search" required>
+                <label class="label-icon" for="search">
+                    <i class="material-icons">search</i>
+                </label>
+                <i class="material-icons">close</i>
+            </div>
+        </form>
+    </div>
+</nav>
 <ul class="collection">
-    <li ng-repeat="customer in customers" class="collection-item avatar">
+    <li ng-repeat="customer in customers | filter:searchText" class="collection-item avatar">
         <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
         <i class="material-icons circle">person</i>
         <span class="title">{{customer.name}}</span>
         <p>{{customer.document}}
             <br> {{customer.phone1}}
         </p>
-        <a href="#!" class="secondary-content">
-            <i class="material-icons">edit</i>
-            <i class="material-icons">delete</i>
-        </a>
+        <div class="secondary-content">
+            <a href="#">
+                <i class="material-icons orange-text lighten-1">edit</i>
+            </a>
+            <a ng-click="desejaExcluir(customer)" href="#">
+                <i class="material-icons red-text">delete</i>
+            </a>
+        </div>
     </li>
 </ul>
+
+<!--Modal-->
+<div id="modal-exclusao" class="modal bottom-sheet">
+    <div class="modal-content">
+        <h4>Excluir cliente</h4>
+        <p>Deseja excluir {{customerToExclude.name}}?</p>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-red btn-flat">Não</a>
+        <a ng-click="" class="modal-close waves-effect waves-green btn-flat">Sim</a>
+    </div>
+</div>
+
+<script>
+    $('.modal').modal();
+</script>
