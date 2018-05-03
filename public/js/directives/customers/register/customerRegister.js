@@ -56,7 +56,7 @@ angular.module('transcotaDiretivas')
 			}
         }
 
-        ddo.templateUrl = 'js/directives/customerRegister/customerRegister.html';
+        ddo.templateUrl = 'js/directives/customers/register/customerRegister.html';
 
         return ddo;
     });
