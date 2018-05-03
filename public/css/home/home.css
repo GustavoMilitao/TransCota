@@ -9,5 +9,9 @@ html {
 body {
     display: initial;
     vertical-align: initial;
-    background-color:initial !important;
+    background-color:#e3f2fd !important;
+}
+
+.tabs {
+    background: #e3f2fd;
 }

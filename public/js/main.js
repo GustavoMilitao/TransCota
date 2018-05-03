@@ -32,18 +32,6 @@ angular.module('transcota', ['ngSanitize', 'ngCookies','ngRoute','transcotaServi
 			controller: 'userRegisterController'
 		});
 
-		$routeProvider.when('/customerRegister', {
-			templateUrl: 'partials/customerRegister.html',
-			controller: 'customerRegisterController',
-			resolve:{
-				'check':function($location,$cookies){   
-					if(!$cookies.get('idUser')){ 
-						$location.path('/');
-					}
-				}
-			}
-		});
-
 		$routeProvider.when('/home', {
 			templateUrl: 'partials/home.html',
 			controller: 'homeController',
