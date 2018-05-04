@@ -15,3 +15,8 @@ body {
 .tabs {
     background: #e3f2fd;
 }
+
+#modal-customer.modal {
+    width: 90%;
+    max-height: 80%;
+}

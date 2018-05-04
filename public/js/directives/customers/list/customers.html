@@ -1,3 +1,8 @@
+<div class="fixed-action-btn" style="bottom: 45px; right: 0px;">
+    <a ng-click="createCustomer()" class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+        <i class="material-icons">add</i>
+    </a>
+</div>
 <nav>
     <div class="nav-wrapper">
         <form>
@@ -20,10 +25,10 @@
             <br> {{customer.phone1}}
         </p>
         <div class="secondary-content">
-            <a href="#">
+            <a ng-click="editCustomer(customer)" href="#">
                 <i class="material-icons orange-text lighten-1">edit</i>
             </a>
-            <a ng-click="desejaExcluir(customer)" href="#">
+            <a ng-click="wantToDelete(customer)" href="#">
                 <i class="material-icons red-text">delete</i>
             </a>
         </div>
@@ -34,14 +39,31 @@
 <div id="modal-exclusao" class="modal bottom-sheet">
     <div class="modal-content">
         <h4>Excluir cliente</h4>
-        <p>Deseja excluir {{customerToExclude.name}}?</p>
+        <p>Deseja excluir {{customer.name}}?</p>
     </div>
     <div class="modal-footer">
         <a class="modal-close waves-effect waves-red btn-flat">Não</a>
-        <a ng-click="" class="modal-close waves-effect waves-green btn-flat">Sim</a>
+        <a ng-click="excluirSelecionado()" class="waves-effect waves-green btn-flat">Sim</a>
+    </div>
+</div>
+
+<div id="modal-customer" class="modal">
+    <div class="modal-content">
+        <customer-register 
+        onRegisterEnd="registerFinished()"
+        customer-model="customer"></customer-register>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-red btn-flat">Fechar</a>
     </div>
 </div>
 
 <script>
-    $('.modal').modal();
+    $('.modal').modal({
+        inDuration : 500,
+        onOpenEnd: function () {
+            M.updateTextFields();
+        }
+    });
+
 </script>
