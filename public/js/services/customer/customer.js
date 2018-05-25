@@ -24,7 +24,7 @@ angular.module('transcotaServicos')
 
         service.edit = function (customer) {
             if (customer.id) {
-                var urlEdit = "http://142.44.246.7:8080/CotacaoWebApp/custumer/" + customer.id
+                var urlEdit = "http://142.44.246.7:8080/CotacaoWebApp/custumer/" + customer.id;
                 delete customer.id;
                 return $http({
                     url: urlEdit,

@@ -20,3 +20,8 @@ body {
     width: 90%;
     max-height: 80%;
 }
+
+#modal-user.modal {
+    width: 90%;
+    max-height: 80%;
+}

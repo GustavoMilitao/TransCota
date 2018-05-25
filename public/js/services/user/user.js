@@ -28,11 +28,37 @@ angular.module('transcotaServicos')
             });
         }
 
-        service.getUser = function(idUser){
+        service.get = function (id) {
+            var urlGet = "http://142.44.246.7:8080/CotacaoWebApp/user/";
+            if (id) {
+                urlGet += id
+            }
             return $http({
-                url: "http://142.44.246.7:8080/CotacaoWebApp/user/"+idUser,
+                url: urlGet,
                 method: 'GET'
             });
+        }
+
+        service.edit = function (user) {
+            if (user.id) {
+                var urlEdit = "http://142.44.246.7:8080/CotacaoWebApp/user/" + user.id;
+                delete user.id;
+                return $http({
+                    url: urlEdit,
+                    method: 'PUT',
+                    data: user
+                });
+            }
+        }
+
+        service.delete = function (id) {
+            if (id) {
+                var urlDelete = "http://142.44.246.7:8080/CotacaoWebApp/user/"+id;
+                return $http({
+                    url: urlDelete,
+                    method: 'DELETE'
+                });
+            }
         }
 
         return service;

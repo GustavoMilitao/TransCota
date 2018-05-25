@@ -1,0 +1,69 @@
+<div class="fixed-action-btn" style="bottom: 45px; right: 0px;">
+    <a ng-click="createUser()" class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+        <i class="material-icons">add</i>
+    </a>
+</div>
+<nav>
+    <div class="nav-wrapper">
+        <form>
+            <div class="input-field">
+                <input ng-model="searchText" id="searchUser" type="search" required>
+                <label class="label-icon" for="searchUser">
+                    <i class="material-icons">search</i>
+                </label>
+                <i class="material-icons">close</i>
+            </div>
+        </form>
+    </div>
+</nav>
+<ul class="collection">
+    <li ng-repeat="user in users | filter:searchText" class="collection-item avatar">
+        <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
+        <i class="material-icons circle">person</i>
+        <span class="title">{{user.name}}</span>
+        <p>{{user.email}}
+            <br> {{user.login}}
+        </p>
+        <div class="secondary-content">
+            <a ng-click="editUser(user)" href="#">
+                <i class="material-icons orange-text lighten-1">edit</i>
+            </a>
+            <a ng-click="wantToDelete(user)" href="#">
+                <i class="material-icons red-text">delete</i>
+            </a>
+        </div>
+    </li>
+</ul>
+
+<!--Modal-->
+<div id="modalExclusaoUser" class="modal bottom-sheet">
+    <div class="modal-content">
+        <h4>Excluir usuario</h4>
+        <p>Deseja excluir {{user.name}}?</p>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-red btn-flat">Não</a>
+        <a ng-click="excluirSelecionado()" class="waves-effect waves-green btn-flat">Sim</a>
+    </div>
+</div>
+
+<div id="modal-user" class="modal">
+    <div class="modal-content">
+        <user-register 
+        onRegisterEnd="registerFinished()"
+        user-model="user"></user-register>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-red btn-flat">Fechar</a>
+    </div>
+</div>
+
+<script>
+    $('.modal').modal({
+        inDuration : 500,
+        onOpenEnd: function () {
+            M.updateTextFields();
+        }
+    });
+
+</script>

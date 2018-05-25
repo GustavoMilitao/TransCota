@@ -10,18 +10,18 @@
                 <i class="material-icons prefix">contacts</i>
                 <input 
                 ng-model="userModel.name" 
-                id="name"
+                id="nameUser"
                 type="text" 
                 class="validate"
                 required oninvalid="this.setCustomValidity('Campo nome obrigatório')" 
                 oninput="setCustomValidity('')">
-                <label for="name">Nome</label>
+                <label for="nameUser">Nome</label>
             </div>
             <div class="input-field col s6">
                 <p>
                     <label>
-                        <input ng-model="userModel.active" type="checkbox" id="remember-me">
-                        <span for="remember-me">Ativo</span>
+                        <input ng-model="userModel.active" type="checkbox" id="activeUser">
+                        <span for="activeUser">Ativo</span>
                     </label>
                 </p>
             </div>
@@ -33,13 +33,13 @@
                 required 
                 ng-model="userModel.cpf" 
                 mask='999.999.999-99' 
-                id="cpf" 
+                id="cpfUser" 
                 type="text" 
                 class="validate"
                 oninvalid="this.setCustomValidity('Campo cpf obrigatório')" 
                 oninput="setCustomValidity('')"
                 clean="true">
-                <label for="cpf">CPF</label>
+                <label for="cpfUser">CPF</label>
             </div>
             <div class="input-field  col m6 s12">
                 <i class="material-icons prefix">person_pin</i>
@@ -101,19 +101,19 @@
                 <input 
                 required 
                 ng-model="userModel.email" 
-                id="email" 
+                id="emailUser" 
                 type="email" 
                 class="validate"
                 oninvalid="this.setCustomValidity('Campo Email obrigatório')" 
                 oninput="setCustomValidity('')">
-                <label for="email">Email</label>
+                <label for="emailUser">Email</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field  col s12">
                 <i class="material-icons prefix">comment</i>
-                <textarea ng-model="userModel.observacao" id="note" cols="30" rows="10" class="validate"></textarea>
-                <label for="note">Observação</label>
+                <textarea ng-model="userModel.observacao" id="noteUser" cols="30" rows="10" class="validate"></textarea>
+                <label for="noteUser">Observação</label>
             </div>
         </div>
         <div class="row">
