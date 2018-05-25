@@ -10,7 +10,8 @@ angular.module('transcotaDiretivas')
         ddo.scope = {
             customers : "@",
             searchText : "@",
-            customer : "@"
+            customer : "@",
+            positionInList : "@"
         };
 
         ddo.link = function(scope, elem, attrs){
@@ -20,8 +21,9 @@ angular.module('transcotaDiretivas')
                 scope.searchText = "";
                 scope.customer = {};
 			}
-			customer.get().then(function(data){
-				scope.customers = data.data;
+			customer.get().then(function(data, position){
+                scope.customers = data.data;
+                scope.positionInList = position;
             });
             scope.wantToDelete = function(customer){
                 scope.customer = customer;
@@ -79,7 +81,8 @@ angular.module('transcotaDiretivas')
 								completeCallback: function () {
 									// scope.clearScreen();
 								}
-							});
+                            });
+                            scope.customers.splice(scope.positionInList, 1);
                         } else {
                             M.toast({ html: data.data.message, displayLength: 3000, classes: 'red rounded' });
                         }

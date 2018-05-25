@@ -17,7 +17,7 @@
     </div>
 </nav>
 <ul class="collection">
-    <li ng-repeat="customer in customers | filter:searchText" class="collection-item avatar">
+    <li ng-repeat="customer in customers | filter:searchText track by $index" class="collection-item avatar">
         <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
         <i class="material-icons circle">person</i>
         <span class="title">{{customer.name}}</span>
@@ -28,7 +28,7 @@
             <a ng-click="editCustomer(customer)" href="#">
                 <i class="material-icons orange-text lighten-1">edit</i>
             </a>
-            <a ng-click="wantToDelete(customer)" href="#">
+            <a ng-click="wantToDelete(customer, $index)" href="#">
                 <i class="material-icons red-text">delete</i>
             </a>
         </div>
