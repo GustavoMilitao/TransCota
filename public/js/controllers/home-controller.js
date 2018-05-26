@@ -39,8 +39,57 @@ angular.module('transcota')
 					text: 'Status das Cotações'
 				  }
 				}
-				
-				
-
-            });			
+			});
+			
+            var ctx = document.getElementById("faturamento").getContext('2d');
+            var faturamento = new Chart(ctx, {
+                type: 'pie',
+				data: {
+					labels: ["João", "Maria", "José", "Carla", "Pedro"],
+					datasets: [{
+					  label: "Faturamento",
+					  backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+					  data: [2478,5267,734,784,433]
+					}]
+				  },
+				  options: {
+					title: {
+					  display: true,
+					  text: 'Faturamento'
+					}
+				  }
+			});
+			
+            var ctx = document.getElementById("tarifasOfertadas").getContext('2d');
+            var tarifasOfertadas = new Chart(ctx, {
+				type: 'bar',
+				data: {
+				  labels: ["João", "Maria", "José", "Carla", "Pedro"],
+				  datasets: [
+					{
+						label: "Tarifa 1",
+						backgroundColor: "#3e95cd",
+						data: [133,221,783,478,544]
+					}, {
+						label: "Tarifa 2",
+						backgroundColor: "#8e5ea2",
+						data: [408,547,675,734,587]
+					}, {
+						label: "Tarifa 3",
+						backgroundColor: "#e8c3b9",
+						data: [98,347,475,634,584]
+					}, {
+						label: "Tarifa 4",
+						backgroundColor: "#c45850",
+						data: [308,517,475,534,557]
+					}
+				  ]
+				},
+				options: {
+				  title: {
+					display: true,
+					text: 'Tarifas ofertadas aos cllientes'
+				  }
+				}
+            });				
 		});
