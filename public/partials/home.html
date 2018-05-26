@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../css/home/home.css">
+
 <nav class="nav-extended light-blue lighten-1">
     <div class="nav-wrapper">
         <a href="/home" class="brand-logo center-align">
@@ -24,6 +25,12 @@
             <li class="tab">
                 <a href="#usuarios">Usuários</a>
             </li>
+            <li class="tab">
+                <a href="#coleta">Coleta</a>
+            </li>
+            <li class="tab">
+                <a href="#entrega">Entrega</a>
+            </li>            
         </ul>
     </div>
 </nav>
@@ -35,6 +42,11 @@
 </ul>
 <div id="home" class="col s12">
     <div class="section no-pad-bot" id="index-banner">
+
+        <div style="width: 310px; height: 310px;">
+            <canvas id="statusCotacoes" width="50" height="50"></canvas>
+        </div>
+
         <div class="container">
             <br><br>
             <h1 class="header center orange-text">Olá {{user.name}}</h1>

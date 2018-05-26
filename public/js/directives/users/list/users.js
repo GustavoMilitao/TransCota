@@ -42,7 +42,7 @@ angular.module('transcotaDiretivas')
                     $('.btn-load').button('reset');
                     $('#modal-user').modal('close');
                     M.toast({
-                        html: 'Cliente registrado com sucesso!',
+                        html: 'Usuário registrado com sucesso!',
                         displayLength: 3000,
                         classes: 'green rounded',
                     });
@@ -56,7 +56,7 @@ angular.module('transcotaDiretivas')
                     $('.btn-load').button('reset');
                     $('#modal-user').modal('close');
                     M.toast({
-                        html: 'Cliente alterado com sucesso!',
+                        html: 'Usuário alterado com sucesso!',
                         displayLength: 3000,
                         classes: 'green rounded',
                     });
@@ -75,7 +75,7 @@ angular.module('transcotaDiretivas')
                         $('#modalExclusaoUser').modal('close');
                         if(data.data.success){
                             M.toast({
-								html: 'Cliente cadastrado com sucesso!',
+								html: 'Usuário cadastrado com sucesso!',
 								displayLength: 3000,
 								classes: 'green rounded',
 								completeCallback: function () {
