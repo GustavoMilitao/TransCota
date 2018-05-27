@@ -1,0 +1,67 @@
+<div class="fixed-action-btn" style="bottom: 45px; right: 0px;">
+    <a ng-click="createCollect()" class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+        <i class="material-icons">add</i>
+    </a>
+</div>
+<nav>
+    <div class="nav-wrapper">
+        <form>
+            <div class="input-field">
+                <input ng-model="searchText" id="searchCollect" type="search" required>
+                <label class="label-icon" for="searchCollect">
+                    <i class="material-icons">search</i>
+                </label>
+                <i class="material-icons">close</i>
+            </div>
+        </form>
+    </div>
+</nav>
+<ul class="collection">
+    <li ng-repeat="collect in collects | filter:searchText track by $index" class="collection-item avatar">
+        <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
+        <i class="material-icons circle">pin_drop</i>
+        <span class="title">{{collect.description}}</span>
+        <p>{{collect.value}}</p>
+        <div class="secondary-content">
+            <a ng-click="editCollect(collect)" href="#">
+                <i class="material-icons orange-text lighten-1">edit</i>
+            </a>
+            <a ng-click="wantToDelete(collect, $index)" href="#">
+                <i class="material-icons red-text">delete</i>
+            </a>
+        </div>
+    </li>
+</ul>
+
+<!--Modal-->
+<div id="modalExclusaoCollect" class="modal bottom-sheet">
+    <div class="modal-content">
+        <h4>Excluir usuario</h4>
+        <p>Deseja excluir {{collect.description}}?</p>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-red btn-flat">Não</a>
+        <a ng-click="excluirSelecionado()" class="waves-effect waves-green btn-flat">Sim</a>
+    </div>
+</div>
+
+<div id="modal-collect" class="modal">
+    <div class="modal-content">
+        <collect-register 
+        onRegisterEnd="registerFinished()"
+        collect-model="collect"></collect-register>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-red btn-flat">Fechar</a>
+    </div>
+</div>
+
+<script>
+    $('.modal').modal({
+        inDuration : 500,
+        onOpenEnd: function () {
+            M.updateTextFields();
+        }
+    });
+
+</script>
