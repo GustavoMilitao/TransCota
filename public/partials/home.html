@@ -31,7 +31,13 @@
             </li>
             <li class="tab">
                 <a href="#entrega">Entrega</a>
-            </li>            
+            </li>
+            <li class="tab">
+                <a href="#cotacaoDedicada">Cotação Dedicada</a>
+            </li>
+            <li class="tab">
+                <a href="#cotacaoFracionada">Cotação Fracionada</a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -45,14 +51,19 @@
     <div class="section no-pad-bot" id="index-banner">
 
         <div class="row">
-            <div class="col-xs-4">
+            <div class="col-md-6">
                 <canvas id="statusCotacoes"></canvas>
             </div>
-            <div class="col-xs-4">
+            <div class="col-md-6">
                 <canvas id="tarifasOfertadas" ></canvas>
             </div>
-            <div class="col-xs-4">
+        </did>
+        <div class="row">
+            <div class="col-md-6">
                 <canvas id="faturamento" ></canvas>
+            </div>
+            <div class="col-md-6">
+                <canvas id="acompanhamentoContato" ></canvas>
             </div>
         </div>
 
@@ -67,6 +78,9 @@
 </div>
 <div id="coleta" class="col s12">
     <collects></collects>
+</div>
+<div id="entrega" class="col s12">
+    <deliverys></deliverys>
 </div>
 
 <script>

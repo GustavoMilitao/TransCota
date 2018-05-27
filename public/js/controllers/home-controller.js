@@ -9,28 +9,28 @@ angular.module('transcota')
 				$location.path('/');
 			}
 
-            var ctx = document.getElementById("statusCotacoes").getContext('2d');
-            var statusCotacoes = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ["Aberto", "Em Andamento", "Pendente", "Faturado"],
-                    datasets: [{
-                        label: 'Status das Cotações',
-                        data: [12, 19, 3, 5],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
+			var ctx = document.getElementById("statusCotacoes").getContext('2d');
+			var statusCotacoes = new Chart(ctx, {
+				type: 'bar',
+				data: {
+						labels: ["Aberto", "Em Andamento", "Pendente", "Faturado"],
+						datasets: [{
+								label: 'Status das Cotações',
+								data: [12, 19, 3, 5],
+								backgroundColor: [
+										'rgba(255, 99, 132, 0.2)',
+										'rgba(54, 162, 235, 0.2)',
+										'rgba(255, 206, 86, 0.2)',
+										'rgba(75, 192, 192, 0.2)'
+								],
+								borderColor: [
+										'rgba(255,99,132,1)',
+										'rgba(54, 162, 235, 1)',
+										'rgba(255, 206, 86, 1)',
+										'rgba(75, 192, 192, 1)'
+								],
+								borderWidth: 1
+						}]
 				},
 				options: {
 				  legend: { display: false },
@@ -41,8 +41,8 @@ angular.module('transcota')
 				}
 			});
 			
-            var ctx = document.getElementById("faturamento").getContext('2d');
-            var faturamento = new Chart(ctx, {
+			var ctx = document.getElementById("faturamento").getContext('2d');
+			var faturamento = new Chart(ctx, {
                 type: 'pie',
 				data: {
 					labels: ["João", "Maria", "José", "Carla", "Pedro"],
@@ -60,8 +60,8 @@ angular.module('transcota')
 				  }
 			});
 			
-            var ctx = document.getElementById("tarifasOfertadas").getContext('2d');
-            var tarifasOfertadas = new Chart(ctx, {
+			var ctx = document.getElementById("tarifasOfertadas").getContext('2d');
+			var tarifasOfertadas = new Chart(ctx, {
 				type: 'bar',
 				data: {
 				  labels: ["João", "Maria", "José", "Carla", "Pedro"],
@@ -91,5 +91,26 @@ angular.module('transcota')
 					text: 'Tarifas ofertadas aos cllientes'
 				  }
 				}
-            });				
+			});
+
+			var ctx = document.getElementById("acompanhamentoContato").getContext('2d');
+			var acompanhamentoContato = new Chart(ctx, {
+				type: 'line',
+				data: {
+					labels: ['André','Thales','Maria','Felipe','Carla'],
+					datasets: [{ 
+							data: [86,114,106,106,107],
+							label: "Quantidade de contatos com clientes",
+							borderColor: "#3e95cd",
+							fill: false
+						}
+					]
+				},
+				options: {
+				  title: {
+					display: true,
+					text: 'Acompanhamento de contato com clientes'
+				  }
+				}
+			});			
 		});
