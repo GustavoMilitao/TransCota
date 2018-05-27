@@ -1,0 +1,50 @@
+<div class="container">
+    <form class="card-panel" ng-submit="submit()">
+        <div class="row">
+            <div class="input-field center-align col s12 register-title">
+                Cadastro de Local de Entrega
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col m6 s12">
+                <i class="material-icons prefix">contacts</i>
+                <input 
+                ng-model="deliveryModel.description" 
+                id="descriptionDelivery"
+                type="text" 
+                class="validate"
+                required oninvalid="this.setCustomValidity('Campo descrição obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="nameUser">Descrição</label>
+            </div>
+            <div class="input-field col s6">
+                <p>
+                    <label>
+                        <input ng-model="deliveryModel.active" type="checkbox" id="activeDelivery">
+                        <span for="activeDelivery">Ativo</span>
+                    </label>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="deliveryModel.value" id="valorEntrega" type="number" oninvalid="this.setCustomValidity('Campo Valor obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="valorEntrega">Valor</label>
+            </div>
+            <!--TODO: Estado será um select-->
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix"></i>
+                <input required ng-model="deliveryModel.state" id="estadoEntrega" type="text" oninvalid="this.setCustomValidity('Campo Estado obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="estadoEntrega">Estado</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col s12">
+                <button class="waves-effect waves-light btn right "><i class="large material-icons right">done</i>Cadastrar</button>
+            </div>
+        </div>
+    </form>
+</div>

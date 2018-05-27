@@ -1,0 +1,67 @@
+<div class="fixed-action-btn" style="bottom: 45px; right: 0px;">
+    <a ng-click="createDelivery()" class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+        <i class="material-icons">add</i>
+    </a>
+</div>
+<nav>
+    <div class="nav-wrapper">
+        <form>
+            <div class="input-field">
+                <input ng-model="searchText" id="searchDelivery" type="search" required>
+                <label class="label-icon" for="searchDelivery">
+                    <i class="material-icons">search</i>
+                </label>
+                <i class="material-icons">close</i>
+            </div>
+        </form>
+    </div>
+</nav>
+<ul class="deliveryion">
+    <li ng-repeat="delivery in deliverys | filter:searchText track by $index" class="deliveryion-item avatar">
+        <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
+        <i class="material-icons circle">pin_drop</i>
+        <span class="title">{{delivery.description}}</span>
+        <p>{{delivery.value}}</p>
+        <div class="secondary-content">
+            <a ng-click="editDelivery(delivery)" href="#">
+                <i class="material-icons orange-text lighten-1">edit</i>
+            </a>
+            <a ng-click="wantToDelete(delivery, $index)" href="#">
+                <i class="material-icons red-text">delete</i>
+            </a>
+        </div>
+    </li>
+</ul>
+
+<!--Modal-->
+<div id="modalExclusaoDelivery" class="modal bottom-sheet">
+    <div class="modal-content">
+        <h4>Excluir local de entrega</h4>
+        <p>Deseja excluir {{delivery.description}}?</p>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-red btn-flat">Não</a>
+        <a ng-click="excluirSelecionado()" class="waves-effect waves-green btn-flat">Sim</a>
+    </div>
+</div>
+
+<div id="modal-delivery" class="modal">
+    <div class="modal-content">
+        <delivery-register 
+        onRegisterEnd="registerFinished()"
+        delivery-model="delivery"></delivery-register>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-red btn-flat">Fechar</a>
+    </div>
+</div>
+
+<script>
+    $('.modal').modal({
+        inDuration : 500,
+        onOpenEnd: function () {
+            M.updateTextFields();
+        }
+    });
+
+</script>
