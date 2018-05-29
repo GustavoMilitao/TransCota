@@ -66,6 +66,7 @@ angular.module('transcotaDiretivas')
             scope.createCustomer = function(){
                 scope.customer = {};
                 $('#modal-customer').modal('open');
+                $('select').formSelect();
             }
 
             scope.excluirSelecionado = function(){

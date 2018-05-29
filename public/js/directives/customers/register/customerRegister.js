@@ -1,5 +1,5 @@
 angular.module('transcotaDiretivas')
-	.directive('customerRegister', function (customer) {
+	.directive('customerRegister', function (customer, state) {
 
 		var ddo = {};
 
@@ -10,6 +10,7 @@ angular.module('transcotaDiretivas')
 		ddo.scope = {
 			customerModel: "=",
 			tipoCliente: "@",
+			estados : "@",
 			onRegisterEnd: "&",
 			onEditEnd: "&"
 		};
@@ -17,9 +18,14 @@ angular.module('transcotaDiretivas')
 		ddo.link = function (scope, elem, attrs) {
 			scope.clearScreen = function () {
 				scope.customerModel = {};
+				scope.estados = [];
 				scope.tipoCliente = "0";
 			}
 			scope.clearScreen();
+
+			state.get().then(data =>{
+				scope.estados = data.data;
+			})
 
 			scope.editCustomer = function () {
 				customer.edit(scope.customerModel)

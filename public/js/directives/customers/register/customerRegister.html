@@ -112,12 +112,24 @@
             <label for="cidade">Cidade</label>
         </div>
         <!--TODO: Estado será um select-->
-        <div class="input-field  col m6 s12">
+        <div class="input-field col m6 s12">
+            <select
+            id="estado"
+            required 
+            ng-model="customerModel.state"
+            oninvalid="this.setCustomValidity('Campo Perfil obrigatório')" 
+            oninput="setCustomValidity('')">
+                    <option value="">Selecione</option>
+                    <option ng-repeat="estado in estados" value="{{estado.id}}">{{estado.sigla}}</option>
+                </select>
+            <label for="estado">Estado</label>
+        </div>
+        <!-- <div class="input-field  col m6 s12">
             <i class="material-icons prefix"></i>
             <input required ng-model="customerModel.state" id="estado" type="text" oninvalid="this.setCustomValidity('Campo Estado obrigatório')"
                 oninput="setCustomValidity('')">
             <label for="estado">Estado</label>
-        </div>
+        </div> -->
     </div>
     <div class="row">
         <div class="input-field  col s12">
