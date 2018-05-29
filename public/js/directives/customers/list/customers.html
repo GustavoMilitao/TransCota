@@ -21,8 +21,8 @@
         <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
         <i class="material-icons circle">person</i>
         <span class="title">{{customer.name}}</span>
-        <p>{{customer.document}}
-            <br> {{customer.phone1}}
+        <p>{{::customer.document | mask:'99.999.999/9999-99'}}
+            <br> {{::customer.phone1 | mask:'(99)9?9999-9999)'}}
         </p>
         <div class="secondary-content">
             <a ng-click="editCustomer(customer)" href="#">

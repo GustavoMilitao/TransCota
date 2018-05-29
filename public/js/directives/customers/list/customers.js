@@ -21,12 +21,12 @@ angular.module('transcotaDiretivas')
                 scope.searchText = "";
                 scope.customer = {};
 			}
-			customer.get().then(function(data, position){
+			customer.get().then(function(data){
                 scope.customers = data.data;
-                scope.positionInList = position;
             });
-            scope.wantToDelete = function(customer){
+            scope.wantToDelete = function(customer, position){
                 scope.customer = customer;
+                scope.positionInList = position;
                 $('#modal-exclusao').modal('open');
             }
 
