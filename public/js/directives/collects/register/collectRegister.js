@@ -25,7 +25,15 @@ angular.module('transcotaDiretivas')
 						$('.btn-load').button('reset');
 						if (data.data.success) {
 							if (scope.onEditEnd) {
-								scope.onEditEnd();
+								// scope.onEditEnd();
+								scope.collects = data.data;
+								$('.btn-load').button('reset');
+								$('#modal-collect').modal('close');
+								M.toast({
+									html: 'Local de coleta editado com sucesso!',
+									displayLength: 3000,
+									classes: 'green rounded',
+								});								
 							}
 						} else {
 							M.toast({ html: data.data.message, displayLength: 3000, classes: 'red rounded' })
@@ -42,7 +50,15 @@ angular.module('transcotaDiretivas')
 						$('.btn-load').button('reset');
 						if (data.data.success) {
 							if (scope.onRegisterEnd) {
-								scope.onRegisterEnd();
+								// scope.onRegisterEnd();
+								scope.collects = data.data;
+								$('.btn-load').button('reset');
+								$('#modal-collect').modal('close');
+								M.toast({
+									html: 'Local de coleta registrado com sucesso!',
+									displayLength: 3000,
+									classes: 'green rounded',
+								});								
 							}
 						} else {
 							M.toast({ html: data.data.message, displayLength: 3000, classes: 'red rounded' })

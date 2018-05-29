@@ -16,8 +16,8 @@
         </form>
     </div>
 </nav>
-<ul class="deliveryion">
-    <li ng-repeat="delivery in deliverys | filter:searchText track by $index" class="deliveryion-item avatar">
+<ul class="collection">
+    <li ng-repeat="delivery in deliverys | filter:searchText track by $index" class="collection-item avatar">
         <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
         <i class="material-icons circle">pin_drop</i>
         <span class="title">{{delivery.description}}</span>

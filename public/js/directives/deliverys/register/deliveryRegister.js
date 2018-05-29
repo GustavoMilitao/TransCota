@@ -24,7 +24,17 @@ angular.module('transcotaDiretivas')
 						$('.btn-load').button('reset');
 						if (data.data.success) {
 							if (scope.onEditEnd) {
-								scope.onEditEnd();
+								// scope.onEditEnd();
+								delivery.get().then(function(data){
+									scope.deliverys = data.data;
+									$('.btn-load').button('reset');
+									$('#modal-delivery').modal('close');
+									M.toast({
+										html: 'Local de entrega editado com sucesso!',
+										displayLength: 3000,
+										classes: 'green rounded',
+									});
+								});									
 							}
 						} else {
 							M.toast({ html: data.data.message, displayLength: 3000, classes: 'red rounded' })
@@ -41,7 +51,17 @@ angular.module('transcotaDiretivas')
 						$('.btn-load').button('reset');
 						if (data.data.success) {
 							if (scope.onRegisterEnd) {
-								scope.onRegisterEnd();
+								// scope.onRegisterEnd();
+								delivery.get().then(function(data){
+									scope.deliverys = data.data;
+									$('.btn-load').button('reset');
+									$('#modal-delivery').modal('close');
+									M.toast({
+										html: 'Local de entrega registrado com sucesso!',
+										displayLength: 3000,
+										classes: 'green rounded',
+									});
+								});								
 							}
 						} else {
 							M.toast({ html: data.data.message, displayLength: 3000, classes: 'red rounded' })

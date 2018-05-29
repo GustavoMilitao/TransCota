@@ -75,7 +75,7 @@ angular.module('transcotaDiretivas')
                         $('#modalExclusaoUser').modal('close');
                         if(data.data.success){
                             M.toast({
-								html: 'Usuário cadastrado com sucesso!',
+								html: 'Usuário excluído com sucesso!',
 								displayLength: 3000,
 								classes: 'green rounded',
 								completeCallback: function () {

@@ -49,7 +49,7 @@ angular.module('transcotaDiretivas')
                 });
             }
 
-            scope.editFinished = function(){
+            scope.onEditEnd = function(){
                 $('.btn-load').button('loading');
                 customer.get().then(function(data){
                     scope.customers = data.data;

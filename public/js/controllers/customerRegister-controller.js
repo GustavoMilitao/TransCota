@@ -37,7 +37,6 @@ angular.module('transcota')
 
 			$scope.tipoCliente = "0";
 
-
 			$scope.submit = function () {
 				$('.btn-load').button('loading');
 				customer.register($scope.customerModel)

@@ -74,7 +74,7 @@ angular.module('transcotaDiretivas')
                         $('#modalExclusaoDelivery').modal('close');
                         if(data.data.success){
                             M.toast({
-								html: 'Local de coleta cadastrado com sucesso!',
+								html: 'Local de coleta excluído com sucesso!',
 								displayLength: 3000,
 								classes: 'green rounded',
 								completeCallback: function () {
