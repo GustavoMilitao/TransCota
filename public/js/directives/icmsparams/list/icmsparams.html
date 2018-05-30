@@ -1,0 +1,67 @@
+<div class="fixed-action-btn" style="bottom: 45px; right: 0px;">
+    <a ng-click="createIcmsParam()" class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+        <i class="material-icons">add</i>
+    </a>
+</div>
+<nav>
+    <div class="nav-wrapper">
+        <form>
+            <div class="input-field">
+                <input ng-model="searchText" id="searchIcmsParam" type="search" required>
+                <label class="label-icon" for="searchIcmsParam">
+                    <i class="material-icons">search</i>
+                </label>
+                <i class="material-icons">close</i>
+            </div>
+        </form>
+    </div>
+</nav>
+<ul class="collection">
+    <li ng-repeat="icmsparam in icmsparams | filter:searchText track by $index" class="collection-item avatar">
+        <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
+        <i class="material-icons circle">pin_drop</i>
+        <span class="title">UF Origem: {{icmsparam.stateOrigin}}</span>
+        <p>UF Destino: {{icmsparam.stateDestiny}}</p>
+        <div class="secondary-content">
+            <a ng-click="editIcmsParam(icmsparam)" href="#">
+                <i class="material-icons orange-text lighten-1">edit</i>
+            </a>
+            <a ng-click="wantToDelete(icmsparam, $index)" href="#">
+                <i class="material-icons red-text">delete</i>
+            </a>
+        </div>
+    </li>
+</ul>
+
+<!--Modal-->
+<div id="modalExclusaoIcmsParam" class="modal bottom-sheet">
+    <div class="modal-content">
+        <h4>Excluir configurações de ICMS</h4>
+        <p>Deseja excluir as configurações de {{icmsparam.stateOrigin}} para {{icmsparam.stateDestiny}}?</p>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-red btn-flat">Não</a>
+        <a ng-click="excluirSelecionado()" class="waves-effect waves-green btn-flat">Sim</a>
+    </div>
+</div>
+
+<div id="modal-icmsparam" class="modal">
+    <div class="modal-content">
+        <icmsparam-register 
+        onRegisterEnd="registerFinished()"
+        icmsparam-model="icmsparam"></icmsparam-register>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-red btn-flat">Fechar</a>
+    </div>
+</div>
+
+<script>
+    $('.modal').modal({
+        inDuration : 500,
+        onOpenEnd: function () {
+            M.updateTextFields();
+        }
+    });
+
+</script>
