@@ -41,7 +41,7 @@ angular.module('transcotaDiretivas')
 						}
 					})
 					.catch(function (data) {
-						M.toast({ html: 'Um erro ocorreu ao alterar um local de entrega', displayLength: 3000, classes: 'red rounded' });
+						M.toast({ html: 'Um erro ocorreu ao alterar um rota', displayLength: 3000, classes: 'red rounded' });
 					});
 			}
 
@@ -68,7 +68,7 @@ angular.module('transcotaDiretivas')
 						}
 					})
 					.catch(function (data) {
-						M.toast({ html: 'Um erro ocorreu ao cadastrar um local de entrega', displayLength: 3000, classes: 'red rounded' });
+						M.toast({ html: 'Um erro ocorreu ao cadastrar um rota', displayLength: 3000, classes: 'red rounded' });
 					});
 			}
 

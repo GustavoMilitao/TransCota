@@ -41,7 +41,7 @@ angular.module('transcotaDiretivas')
                     $('.btn-load').button('reset');
                     $('#modal-route').modal('close');
                     M.toast({
-                        html: 'Local de coleta registrado com sucesso!',
+                        html: 'Rota registrado com sucesso!',
                         displayLength: 3000,
                         classes: 'green rounded',
                     });
@@ -55,7 +55,7 @@ angular.module('transcotaDiretivas')
                     $('.btn-load').button('reset');
                     $('#modal-route').modal('close');
                     M.toast({
-                        html: 'Local de coleta alterado com sucesso!',
+                        html: 'Rota alterado com sucesso!',
                         displayLength: 3000,
                         classes: 'green rounded',
                     });
@@ -74,7 +74,7 @@ angular.module('transcotaDiretivas')
                         $('#modalExclusaoRoute').modal('close');
                         if(data.data.success){
                             M.toast({
-								html: 'Local de coleta excluído com sucesso!',
+								html: 'Rota excluído com sucesso!',
 								displayLength: 3000,
 								classes: 'green rounded',
 								completeCallback: function () {
