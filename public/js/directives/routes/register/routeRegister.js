@@ -30,7 +30,7 @@ angular.module('transcotaDiretivas')
 									$('.btn-load').button('reset');
 									$('#modal-route').modal('close');
 									M.toast({
-										html: 'Local de entrega editado com sucesso!',
+										html: 'Rota editado com sucesso!',
 										displayLength: 3000,
 										classes: 'green rounded',
 									});
@@ -57,7 +57,7 @@ angular.module('transcotaDiretivas')
 									$('.btn-load').button('reset');
 									$('#modal-route').modal('close');
 									M.toast({
-										html: 'Local de entrega registrado com sucesso!',
+										html: 'Rota registrado com sucesso!',
 										displayLength: 3000,
 										classes: 'green rounded',
 									});
