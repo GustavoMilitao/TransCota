@@ -18,7 +18,6 @@
 </nav>
 <ul class="collection">
     <li ng-repeat="icmsparam in icmsparams | filter:searchText track by $index" class="collection-item avatar">
-        <!-- <img src="images/yuna.jpg" alt="" class="circle"> -->
         <i class="material-icons circle">pin_drop</i>
         <span class="title">UF Origem: {{icmsparam.stateOrigin}}</span>
         <p>UF Destino: {{icmsparam.stateDestiny}}</p>
@@ -34,10 +33,10 @@
 </ul>
 
 <!--Modal-->
-<div id="modalExclusaoIcmsParam" class="modal bottom-sheet">
+<div id="modalExclusaoIcms" class="modal bottom-sheet">
     <div class="modal-content">
         <h4>Excluir configurações de ICMS</h4>
-        <p>Deseja excluir as configurações de {{icmsparam.stateOrigin}} para {{icmsparam.stateDestiny}}?</p>
+        <p>Deseja excluir as configurações de {{icms.stateOrigin}} para {{icms.stateDestiny}}?</p>
     </div>
     <div class="modal-footer">
         <a class="modal-close waves-effect waves-red btn-flat">Não</a>
@@ -45,11 +44,11 @@
     </div>
 </div>
 
-<div id="modal-icmsparam" class="modal">
+<div id="modal-icms" class="modal">
     <div class="modal-content">
-        <icmsparam-register 
+        <icms-register 
         onRegisterEnd="registerFinished()"
-        icmsparam-model="icmsparam"></icmsparam-register>
+        icmsparam-model="icms"></icms-register>
     </div>
     <div class="modal-footer">
         <a class="modal-close waves-effect waves-red btn-flat">Fechar</a>

@@ -22,7 +22,7 @@
                 <i class="material-icons prefix">pin_drop</i>
                 <input 
                 required ng-model="icmsparamModel.stateDestiny" 
-                id="estadoOrigem" 
+                id="estadoDestino" 
                 type="text" 
                 oninvalid="this.setCustomValidity('Campo Estado de destino obrigatório')"
                 oninput="setCustomValidity('')">
@@ -34,13 +34,13 @@
                 <i class="material-icons prefix">attach_money</i>
                 <input 
                 required 
-                ng-model="icmsparamModel.percICMSContrib" 
-                id="icmsparam" 
+                ng-model="icmsparamModel.percICMSTaxpayer" 
+                id="icmsparamContrib" 
                 type="number"
                 class="validate"
                 oninvalid="this.setCustomValidity('Campo percentual de ICMS obrigatório')" 
                 oninput="setCustomValidity('')">
-                <label for="icmsparam">Percentual de ICMS para contribuinte</label>
+                <label for="icmsparam">ICMS para contribuinte</label>
             </div>
         </div>
         <div class="row">
@@ -48,13 +48,13 @@
                 <i class="material-icons prefix">attach_money</i>
                 <input 
                 required 
-                ng-model="icmsparamModel.percICMSContrib" 
-                id="icmsparam" 
+                ng-model="icmsparamModel.percICMSNoTaxpayer" 
+                id="icmsparamNaoContrib" 
                 type="number"
                 class="validate"
                 oninvalid="this.setCustomValidity('Campo percentual de ICMS obrigatório')" 
                 oninput="setCustomValidity('')">
-                <label for="icmsparam">Percentual de ICMS para não contribuinte</label>
+                <label for="icmsparam">ICMS para não contribuinte</label>
             </div>
         </div>
         <div class="row">

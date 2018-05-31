@@ -1,5 +1,5 @@
 angular.module('transcotaDiretivas')
-	.directive('icmsRegister', function (icmsparam) {
+	.directive('icmsRegister', function (icms) {
 
 		var ddo = {};
 
@@ -9,7 +9,6 @@ angular.module('transcotaDiretivas')
 
 		ddo.scope = {
 			icmsparamModel: "=",
-			// tipoCliente: "@",
 			onRegisterEnd: "&",
 			onEditEnd: "&"
 		};
@@ -20,8 +19,8 @@ angular.module('transcotaDiretivas')
 			}
 			scope.clearScreen();
 
-			scope.editUser = function () {
-				icmsparam.edit(scope.icmsparamModel)
+			scope.editIcms = function () {
+				icms.edit(scope.icmsparamModel)
 					.then(function (data) {
 						$('.btn-load').button('reset');
 						if (data.data.success) {
@@ -30,7 +29,7 @@ angular.module('transcotaDiretivas')
 								$('.btn-load').button('reset');
 								$('#modal-icms').modal('close');
 								M.toast({
-									html: 'Usuário alterado com sucesso!',
+									html: 'Configuração de ICMS alterado com sucesso!',
 									displayLength: 3000,
 									classes: 'green rounded',
 								});
@@ -44,8 +43,8 @@ angular.module('transcotaDiretivas')
 					});
 			}
 
-			scope.registerUser = function () {
-				icmsparam.register(scope.icmsparamModel)
+			scope.registerIcms = function () {
+				icms.register(scope.icmsparamModel)
 					.then(function (data) {
 						$('.btn-load').button('reset');
 						if (data.data.success) {
@@ -54,7 +53,7 @@ angular.module('transcotaDiretivas')
 								$('.btn-load').button('reset');
 								$('#modal-icms').modal('close');
 								M.toast({
-									html: 'Usuário criado com sucesso!',
+									html: 'Configuração de ICMS criada com sucesso!',
 									displayLength: 3000,
 									classes: 'green rounded',
 								});								
@@ -64,16 +63,16 @@ angular.module('transcotaDiretivas')
 						}
 					})
 					.catch(function (data) {
-						M.toast({ html: 'Um erro ocorreu ao cadastrar um cliente', displayLength: 3000, classes: 'red rounded' });
+						M.toast({ html: 'Um erro ocorreu ao cadastrar um parâmetro de ICMS', displayLength: 3000, classes: 'red rounded' });
 					});
 			}
 
 			scope.submit = function () {
 				$('.btn-load').button('loading');
 				if (scope.icmsparamModel.id && scope.icmsparamModel.id != '') {
-					scope.editUser();
+					scope.editIcms();
 				} else {
-					scope.registerUser();
+					scope.registerIcms();
 				}
 			}
 		}

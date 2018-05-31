@@ -27,11 +27,11 @@ angular.module('transcotaDiretivas')
             scope.wantToDelete = function(icms, position){
                 scope.icms = icms;
                 scope.positionInList = position;
-                $('#modalExclusaoUser').modal('open');
+                $('#modalExclusaoIcms').modal('open');
             }
 
-            scope.editUser = function(icms){
-                scope.icms = icms;
+            scope.editIcmsParam = function(icmsparams){
+                scope.icms = icmsparams;
                 $('#modal-icms').modal('open');
             }
 
@@ -63,7 +63,7 @@ angular.module('transcotaDiretivas')
                 });
             }
 
-            scope.createUser = function(){
+            scope.createIcmsParam = function(){
                 scope.icms = {};
                 $('#modal-icms').modal('open');
             }
@@ -72,7 +72,7 @@ angular.module('transcotaDiretivas')
                 if(scope.icms){
                     icms.delete(scope.icms.id)
                     .then(function(data){
-                        $('#modalExclusaoUser').modal('close');
+                        $('#modalExclusaoIcms').modal('close');
                         if(data.data.success){
                             M.toast({
 								html: 'Usuário excluído com sucesso!',
