@@ -1,0 +1,123 @@
+<div class="container">
+    <form class="card-panel" ng-submit="submit()">
+        <div class="row">
+            <div class="input-field center-align col s12 register-title">
+                Cadastro de Rotas
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col m6 s12">
+                <i class="material-icons prefix">description</i>
+                <input 
+                ng-model="routeModel.description" 
+                id="descriptionRoute"
+                type="text" 
+                class="validate"
+                required oninvalid="this.setCustomValidity('Campo descrição obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="nameUser">Descrição</label>
+            </div>
+            <div class="input-field col s6">
+                <p>
+                    <label>
+                        <input ng-model="routeModel.active" type="checkbox" id="activeRoute">
+                        <span for="activeRoute">Ativo</span>
+                    </label>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <!--TODO: Estado será um select-->
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix"></i>
+                <input required ng-model="routeModel.stateCollect" id="estadoColetaRota" type="text" oninvalid="this.setCustomValidity('Campo Estado de coleta obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="estadoColetaRota">Estado de Coleta</label>
+            </div>
+            <!--TODO: Estado será um select-->
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix"></i>
+                <input required ng-model="routeModel.stateDelivery" id="estadoEntregaRota" type="text" oninvalid="this.setCustomValidity('Campo Estado obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="estadoEntregaRota">Estado de Entrega</label>
+            </div>            
+        </div>
+        <div class="row">
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">looks_two</i>
+                <input required ng-model="routeModel.normalDeadline" id="prazoNormal" type="number" class="validate" oninvalid="this.setCustomValidity('Campo prazo de dias (normal) obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="prazoNormal">Prazo normal (dias)</label>
+            </div>
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">looks_two</i>
+                <input required ng-model="routeModel.expressDeadline" id="prazoExpresso" type="number" class="validate" oninvalid="this.setCustomValidity('Campo prazo de dias (expresso) obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="prazoExpresso">Prazo expresso (dias)</label>
+            </div>            
+        </div>
+        <div class="row">
+            <div class="input-field center-align col s12 register-title">
+                Tarifas para frete normal
+            </div>
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="routeModel.value1Normal" id="valor1Normal" type="number" oninvalid="this.setCustomValidity('Campo Tarifa 1 obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="valor1Normal">Tarifa 1</label>
+            </div>
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="routeModel.value2Normal" id="valor2Normal" type="number" oninvalid="this.setCustomValidity('Campo Tarifa 2 obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="valor2Normal">Tarifa 2</label>
+            </div>
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="routeModel.value3Normal" id="valor3Normal" type="number" oninvalid="this.setCustomValidity('Campo Tarifa 3 obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="valor3Normal">Tarifa 3</label>
+            </div>
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="routeModel.value4Normal" id="valor4Normal" type="number" oninvalid="this.setCustomValidity('Campo Tarifa 4 obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="valor4Normal">Tarifa 4</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field center-align col s12 register-title">
+                Tarifas para frete expresso
+            </div>
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="routeModel.value1Express" id="valor1Express" type="number" oninvalid="this.setCustomValidity('Campo Tarifa 1 obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="valor1Express">Tarifa 1</label>
+            </div>
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="routeModel.value2Express" id="valor2Express" type="number" oninvalid="this.setCustomValidity('Campo Tarifa 2 obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="valor2Express">Tarifa 2</label>
+            </div>
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="routeModel.value3Express" id="valor3Express" type="number" oninvalid="this.setCustomValidity('Campo Tarifa 3 obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="valor3Express">Tarifa 3</label>
+            </div>
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="routeModel.value4Express" id="valor4Express" type="number" oninvalid="this.setCustomValidity('Campo Tarifa 4 obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="valor4Express">Tarifa 4</label>
+            </div>
+        </div>        
+        <div class="row">
+            <div class="input-field  col s12">
+                <button class="waves-effect waves-light btn right "><i class="large material-icons right">done</i>Cadastrar</button>
+            </div>
+        </div>
+    </form>
+</div>

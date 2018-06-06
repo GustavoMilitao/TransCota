@@ -1,0 +1,76 @@
+<div class="container">
+    <form class="card-panel" ng-submit="submit()">
+        <div class="row">
+            <div class="input-field center-align col s12 register-title">
+                Configurações de ICMS
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">pin_drop</i>
+                <input 
+                required ng-model="icmsparamModel.stateOrigin" 
+                id="estadoOrigem" 
+                type="text" 
+                oninvalid="this.setCustomValidity('Campo Estado origem obrigatório')"
+                oninput="setCustomValidity('')">
+                <label for="estado">Estado de origem</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">pin_drop</i>
+                <input 
+                required ng-model="icmsparamModel.stateDestiny" 
+                id="estadoDestino" 
+                type="text" 
+                oninvalid="this.setCustomValidity('Campo Estado de destino obrigatório')"
+                oninput="setCustomValidity('')">
+                <label for="estado">Estado de destino</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input 
+                required 
+                ng-model="icmsparamModel.percICMSTaxpayer" 
+                id="icmsparamContrib" 
+                type="number"
+                class="validate"
+                oninvalid="this.setCustomValidity('Campo percentual de ICMS obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="icmsparam">ICMS para contribuinte</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input 
+                required 
+                ng-model="icmsparamModel.percICMSNoTaxpayer" 
+                id="icmsparamNaoContrib" 
+                type="number"
+                class="validate"
+                oninvalid="this.setCustomValidity('Campo percentual de ICMS obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="icmsparam">ICMS para não contribuinte</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <p>
+                    <label>
+                        <input ng-model="icmsparamModel.active" type="checkbox" id="activeIcmsparam">
+                        <span for="activeIcmsparam">Ativo</span>
+                    </label>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field  col s12">
+                <button class="waves-effect waves-light btn right "><i class="large material-icons right">done</i>Cadastrar</button>
+            </div>
+        </div>
+    </form>
+</div>
