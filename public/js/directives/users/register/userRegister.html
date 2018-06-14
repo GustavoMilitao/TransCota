@@ -8,13 +8,8 @@
         <div class="row">
             <div class="input-field col m6 s12">
                 <i class="material-icons prefix">contacts</i>
-                <input 
-                ng-model="userModel.name" 
-                id="nameUser"
-                type="text" 
-                class="validate"
-                required oninvalid="this.setCustomValidity('Campo nome obrigatório')" 
-                oninput="setCustomValidity('')">
+                <input ng-model="userModel.name" id="nameUser" type="text" class="validate" required oninvalid="this.setCustomValidity('Campo nome obrigatório')"
+                    oninput="setCustomValidity('')">
                 <label for="nameUser">Nome</label>
             </div>
             <div class="input-field col s6">
@@ -29,83 +24,36 @@
         <div class="row">
             <div class="input-field  col m6 s12">
                 <i class="material-icons prefix">person_pin</i>
-                <input 
-                required 
-                ng-model="userModel.cpf" 
-                mask='999.999.999-99' 
-                id="cpfUser" 
-                type="text" 
-                class="validate"
-                oninvalid="this.setCustomValidity('Campo cpf obrigatório')" 
-                oninput="setCustomValidity('')"
-                clean="true">
+                <input required ng-model="userModel.cpf" mask='999.999.999-99' id="cpfUser" type="text" class="validate" oninvalid="this.setCustomValidity('Campo cpf obrigatório')"
+                    oninput="setCustomValidity('')" clean="true">
                 <label for="cpfUser">CPF</label>
             </div>
             <div class="input-field  col m6 s12">
                 <i class="material-icons prefix">person_pin</i>
-                <input 
-                required 
-                ng-model="userModel.rg" 
-                id="rg" 
-                type="text" 
-                class="validate"
-                oninvalid="this.setCustomValidity('Campo RG obrigatório')" 
-                oninput="setCustomValidity('')">
+                <input required ng-model="userModel.rg" id="rg" type="text" class="validate" oninvalid="this.setCustomValidity('Campo RG obrigatório')"
+                    oninput="setCustomValidity('')">
                 <label for="rg">RG</label>
             </div>
         </div>
-        <!-- <div class="row">
-            <div class="input-field col s12">
-                <select 
-                required 
-                ng-model="userModel.idProfile"
-                oninvalid="this.setCustomValidity('Campo Perfil obrigatório')" 
-                oninput="setCustomValidity('')">
-                        <option value="">Selecione</option>
-                        <option 
-                        ng-repeat="perfil in perfis" 
-                        value="{{perfil.id}}">{{perfil.description}}</option>
-                    </select>
-                <label>Perfil</label>
-            </div>
-        </div> -->
         <div class="row">
             <div class="input-field  col m6 s12">
                 <i class="material-icons prefix">account_circle</i>
-                <input 
-                required 
-                ng-model="userModel.login" 
-                id="user" 
-                type="text" 
-                class="validate"
-                oninvalid="this.setCustomValidity('Campo Login obrigatório')" 
-                oninput="setCustomValidity('')">
+                <input required ng-model="userModel.login" id="user" type="text" class="validate" oninvalid="this.setCustomValidity('Campo Login obrigatório')"
+                    oninput="setCustomValidity('')">
                 <label for="user">Login</label>
             </div>
             <div class="input-field  col m6 s12">
                 <i class="material-icons prefix">vpn_key</i>
-                <input 
-                required 
-                ng-model="userModel.password" 
-                id="password" 
-                type="password" 
-                class="validate"
-                oninvalid="this.setCustomValidity('Campo Senha obrigatório')" 
-                oninput="setCustomValidity('')">
+                <input required ng-model="userModel.password" id="password" type="password" class="validate" oninvalid="this.setCustomValidity('Campo Senha obrigatório')"
+                    oninput="setCustomValidity('')">
                 <label for="password">Senha</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field  col s12">
                 <i class="material-icons prefix">email</i>
-                <input 
-                required 
-                ng-model="userModel.email" 
-                id="emailUser" 
-                type="email" 
-                class="validate"
-                oninvalid="this.setCustomValidity('Campo Email obrigatório')" 
-                oninput="setCustomValidity('')">
+                <input required ng-model="userModel.email" id="emailUser" type="email" class="validate" oninvalid="this.setCustomValidity('Campo Email obrigatório')"
+                    oninput="setCustomValidity('')">
                 <label for="emailUser">Email</label>
             </div>
         </div>
@@ -116,9 +64,38 @@
                 <label for="noteUser">Observação</label>
             </div>
         </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <p>
+                    <label>
+                        <input name="gerencial" value=1 ng-model="userModel.profile" type="radio" checked />
+                        <span>Gerencial</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="operacional" value=2 ng-model="userModel.profile" type="radio" />
+                        <span>Operacional</span>
+                    </label>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <p>
+                    <label>
+                        <input ng-model="userModel.seeQuotation" type="checkbox" id="seeQuotations">
+                        <span for="activeUser">Pode ver cotações de todos os vendedores</span>
+                    </label>
+                </p>
+            </div>            
+        </div>        
         <div class="row">
             <div class="input-field  col s12">
-                <button class="waves-effect waves-light btn right "><i class="large material-icons right">done</i>Cadastrar</button>
+                <button class="waves-effect waves-light btn right ">
+                    <i class="large material-icons right">done</i>Cadastrar</button>
             </div>
         </div>
     </form>

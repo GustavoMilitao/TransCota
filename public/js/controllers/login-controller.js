@@ -1,13 +1,25 @@
 angular.module('transcota')
 	.controller('loginController',
 
-		function ($scope, user, $location, $cookies) {
+		function ($scope, user, $location, $cookies, $timeout) {
 			$scope.usuario = "";
 			$scope.senha = "";
 			$scope.wrongUserOrPassword = false;
 			
 			$scope.submit = function(){
 				$('.btn-load').button('loading');
+				flag = 0;
+				while (flag<10) {
+					user.get(1).then(function(data){
+						if (data.data) {
+							flag = 10;
+						} else {
+							flag=flag+1;
+						}
+					});
+					flag=flag+1;
+				}
+
 				user.login($scope.usuario, $scope.senha)
 				.then(function(data){
 					$('.btn-load').button('reset');

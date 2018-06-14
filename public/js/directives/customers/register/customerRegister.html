@@ -117,7 +117,7 @@
             id="estado"
             required 
             ng-model="customerModel.state"
-            oninvalid="this.setCustomValidity('Campo Perfil obrigatório')" 
+            oninvalid="this.setCustomValidity('Campo estado obrigatório')" 
             oninput="setCustomValidity('')">
                     <option value="">Selecione</option>
                     <option ng-repeat="estado in estados" value="{{estado.id}}">{{estado.sigla}}</option>
