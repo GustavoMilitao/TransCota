@@ -28,7 +28,7 @@ angular.module('transcotaDiretivas')
 							if (scope.onEditEnd) {
 								// scope.onEditEnd();
 								$('.btn-load').button('reset');
-								$('#modal-customer').modal('close');
+								$('#modal-user').modal('close');
 								M.toast({
 									html: 'Usuário alterado com sucesso!',
 									displayLength: 3000,
@@ -36,11 +36,13 @@ angular.module('transcotaDiretivas')
 								});
 							}
 						} else {
-							M.toast({ html: data.data.message, displayLength: 3000, classes: 'red rounded' })
+							M.toast({ html: data.data.message, displayLength: 3000, classes: 'red rounded' });
+							$('#modal-user').modal('close');
 						}
 					})
 					.catch(function (data) {
 						M.toast({ html: 'Um erro ocorreu ao alterar um cliente', displayLength: 3000, classes: 'red rounded' });
+						$('#modal-user').modal('close');
 					});
 			}
 
@@ -52,7 +54,7 @@ angular.module('transcotaDiretivas')
 							if (scope.onRegisterEnd) {
 								// scope.onRegisterEnd();
 								$('.btn-load').button('reset');
-								$('#modal-customer').modal('close');
+								$('#modal-user').modal('close');
 								M.toast({
 									html: 'Usuário criado com sucesso!',
 									displayLength: 3000,
@@ -61,10 +63,12 @@ angular.module('transcotaDiretivas')
 							}
 						} else {
 							M.toast({ html: data.data.message, displayLength: 3000, classes: 'red rounded' })
+							$('#modal-user').modal('close');
 						}
 					})
 					.catch(function (data) {
 						M.toast({ html: 'Um erro ocorreu ao cadastrar um cliente', displayLength: 3000, classes: 'red rounded' });
+						$('#modal-user').modal('close');
 					});
 			}
 

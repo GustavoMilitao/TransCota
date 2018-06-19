@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="../css/home/home.css">
 <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-<nav class="nav-extended teal lighten-1">
+<nav class="nav-extended light-blue lighten-1">
     <div class="nav-wrapper">
-        <a href="/home" class="brand-logo center-align">
+        <a href="/home" class="brand-logo center-align" style="padding-left: 50px">
             <img src="../img/logo_transcota.svg" class="responsive-img" alt="Transcota">
         </a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger">
@@ -15,6 +15,7 @@
             </li>
         </ul>
     </div>
+
     <div class="nav-content">
         <ul class="tabs tabs-transparent">
             <li class="tab">
@@ -37,7 +38,10 @@
             </li>
             <li class="tab">
                 <a href="#rota">Rotas</a>
-            </li>            
+            </li>
+            <li class="tab">
+                <a href="#fator">Fatores</a>
+            </li>
             <li class="tab">
                 <a href="#cotacaoDedicada">Cotação Dedicada</a>
             </li>
@@ -48,7 +52,7 @@
     </div>
 </nav>
 
-<ul class="sidenav" id="mobile-demo">
+<ul class="sidenav" id="mobile-demo">  
     <li class="tab col s3">
         <li><a  ng-click="logout()" href="#"><i class="material-icons right">exit_to_app</i>Sair</a></li>
     </li>
@@ -93,6 +97,9 @@
 </div>
 <div id="rota" class="col s12">
     <routes></routes>
+</div>
+<div id="fator" class="col s12">
+    <factors></factors>
 </div>
 
 <script>

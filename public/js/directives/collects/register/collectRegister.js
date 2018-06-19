@@ -36,11 +36,13 @@ angular.module('transcotaDiretivas')
 								});								
 							}
 						} else {
-							M.toast({ html: data.data.message, displayLength: 3000, classes: 'red rounded' })
+							M.toast({ html: data.data.message, displayLength: 3000, classes: 'red rounded' });
+							$('#modal-collect').modal('close');
 						}
 					})
 					.catch(function (data) {
 						M.toast({ html: 'Um erro ocorreu ao alterar um local de coleta', displayLength: 3000, classes: 'red rounded' });
+						$('#modal-collect').modal('close');
 					});
 			}
 
@@ -61,11 +63,13 @@ angular.module('transcotaDiretivas')
 								});								
 							}
 						} else {
-							M.toast({ html: data.data.message, displayLength: 3000, classes: 'red rounded' })
+							M.toast({ html: data.data.message, displayLength: 3000, classes: 'red rounded' });
+							$('#modal-collect').modal('close');
 						}
 					})
 					.catch(function (data) {
 						M.toast({ html: 'Um erro ocorreu ao cadastrar um local de coleta', displayLength: 3000, classes: 'red rounded' });
+						$('#modal-collect').modal('close');
 					});
 			}
 

@@ -18,7 +18,7 @@ angular.module('transcotaDiretivas')
                 scope.collects = [];
                 scope.collect = {};
                 scope.searchText = "";
-                scope.collect = {};
+                // scope.collect = {};
 			}
 			collect.get().then(function(data){
 				scope.collects = data.data;
