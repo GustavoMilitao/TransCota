@@ -1,0 +1,105 @@
+<div class="container">
+    <form class="card-panel" ng-submit="submit()">
+        <div class="row">
+            <div class="input-field center-align col s12 register-title">
+                Cadastro de Fatores de Rotas
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col m6 s12">
+                <i class="material-icons prefix">contacts</i>
+                <input 
+                ng-model="factorModel.description" 
+                id="descriptionFactor"
+                type="text" 
+                class="validate"
+                required oninvalid="this.setCustomValidity('Campo descrição obrigatório')" 
+                oninput="setCustomValidity('')">
+                <label for="nameUser">Descrição</label>
+            </div>
+            <div class="input-field col s6">
+                <p>
+                    <label>
+                        <input ng-model="factorModel.active" type="checkbox" id="activeFactor">
+                        <span for="activeFactor">Ativo</span>
+                    </label>
+                </p>
+            </div>
+        </div>
+            
+        <div>
+            Fatores de Rotas
+        </div>
+        <div class="row">
+            <div class="input-field  col l4 m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="factorModel.value" id="valorFator1" type="number" oninvalid="this.setCustomValidity('Campo Valor obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="cidade">Valor</label>
+            </div>
+
+            <div class="input-field  col l4 m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="factorModel.value" id="valorFator1De" type="number" oninvalid="this.setCustomValidity('Campo Valor obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="cidade">DE</label>
+            </div>
+            
+            <div class="input-field  col l4 m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="factorModel.value" id="valorvalorFator1Ate" type="number" oninvalid="this.setCustomValidity('Campo Valor obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="cidade">ATÉ</label>
+            </div>            
+        </div>
+        <div class="row">
+            <div class="input-field  col l4 m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="factorModel.value" id="valorFator2" type="number" oninvalid="this.setCustomValidity('Campo Valor obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="cidade">Valor</label>
+            </div>
+
+            <div class="input-field  col l4 m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="factorModel.value" id="valorFator2De" type="number" oninvalid="this.setCustomValidity('Campo Valor obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="cidade">DE</label>
+            </div>
+            
+            <div class="input-field  col l4 m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="factorModel.value" id="valorvalorFator2Ate" type="number" oninvalid="this.setCustomValidity('Campo Valor obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="cidade">ATÉ</label>
+            </div>            
+        </div>
+        <div class="row">
+            <div class="input-field  col l4 m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="factorModel.value" id="valorFator3" type="number" oninvalid="this.setCustomValidity('Campo Valor obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="cidade">Valor</label>
+            </div>
+
+            <div class="input-field  col l4 m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="factorModel.value" id="valorFator3De" type="number" oninvalid="this.setCustomValidity('Campo Valor obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="cidade">DE</label>
+            </div>
+            
+            <div class="input-field  col l4 m6 s12">
+                <i class="material-icons prefix">attach_money</i>
+                <input required ng-model="factorModel.value" id="valorvalorFator3Ate" type="number" oninvalid="this.setCustomValidity('Campo Valor obrigatório')"
+                    oninput="setCustomValidity('')">
+                <label for="cidade">ATÉ</label>
+            </div>            
+        </div>        
+        <div class="row">
+            <div class="input-field  col s12">
+                <button class="waves-effect waves-light btn right "><i class="large material-icons right">done</i>{{factorModel.id  ? "Alterar" : "Cadastrar"}}</button>
+            </div>
+        </div>
+    </form>
+</div>
